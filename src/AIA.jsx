@@ -155,12 +155,12 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
 
               <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 flex items-start gap-8 md:gap-16">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">38%</h3>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">↑</h3>
                   <p className="text-base sm:text-lg text-gray-600">Increase in active usage</p>
                 </div>
                 <div className="w-px bg-gray-200 self-stretch min-h-[80px]"></div>
                 <div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">32%</h3>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">↑</h3>
                   <p className="text-base sm:text-lg text-gray-600">Increase in conversion rate when users interacted with all touchpoints</p>
                 </div>
               </div>

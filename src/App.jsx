@@ -448,7 +448,7 @@ const App = () => {
                         )}
                         {selectedImage === "AI Assistant Discovery" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">32% ↑ in conversion rate</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↑ in conversion rate</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion.
                             </p>
@@ -729,14 +729,14 @@ const App = () => {
               
               {/* Copyright Bar - Above Name */}
               <div className="container mx-auto px-6 sm:px-8 md:px-12 max-w-6xl mt-16 sm:mt-24 md:mt-32">
-                <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out py-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-6">
-                  <p className="text-sm text-gray-400">
+                <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out py-6 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-16 items-center">
+                  <p className="text-sm text-gray-400 text-center md:text-left">
                     © 2026 Kasturi Khanke
                   </p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-gray-400 text-center md:text-left">
                     San Francisco, CA · {sfTime}
                   </p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-gray-400 text-center md:text-left">
                     Made with ♥ using Claude + Cursor
                   </p>
                 </div>

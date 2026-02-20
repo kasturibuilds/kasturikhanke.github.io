@@ -147,8 +147,8 @@ const PDFSpaces = () => {
                   </div>
                   <div className="w-px bg-gray-200 self-stretch min-h-[80px]"></div>
                   <div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">3x</h3>
-                    <p className="text-base sm:text-lg text-gray-600 max-w-[180px]">Agent switching frequency vs. beta</p>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">↑</h3>
+                    <p className="text-base sm:text-lg text-gray-600 max-w-[180px]">Increase in sharing on mobile</p>
                   </div>
                 </div>
               </div>
