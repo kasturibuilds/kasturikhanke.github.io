@@ -17,7 +17,7 @@ const Feedback = () => {
         hour: 'numeric',
         minute: '2-digit',
         hour12: true
-      });
+      }); 
       setSfTime(time);
     };
     updateSfTime();
