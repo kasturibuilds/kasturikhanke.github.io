@@ -497,17 +497,26 @@ const App = () => {
                       scale: isContentLoaded ? 1 : 0.95
                     }}
                     transition={{ duration: 0.3, delay: 0.2 }}
-                    className="w-full md:w-[50%] min-h-[280px] sm:min-h-[360px] md:min-h-0 h-auto md:h-[85vh] flex items-center justify-center -mt-3 md:mt-2 mb-0 md:mb-4 md:my-0"
+                    className="w-full md:w-[50%] flex items-center justify-center -mt-3 md:mt-2 mb-0 md:mb-4 md:my-0 md:h-[76vh]"
+                    style={{
+                      minHeight: '280px',
+                      height: 'auto',
+                      WebkitTransform: 'translate3d(0, 0, 0)',
+                      transform: 'translate3d(0, 0, 0)'
+                    }}
                   >
-                    <div className="relative w-full h-full flex items-center justify-center">
+                    <div className="hero-image-container relative w-full flex items-center justify-center" style={{ minHeight: 'inherit' }}>
                       <img 
                         src={currentImage}
                         alt="Profile"
-                        className={`block w-full max-w-[280px] sm:max-w-[360px] md:max-w-full md:max-h-full object-contain mx-auto md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 ${
-                          'md:animate-float'
-                        }`}
+                        className="block w-full max-w-[280px] sm:max-w-[360px] md:max-w-full md:max-h-[70vh] object-contain mx-auto md:animate-float"
                         style={{
-                          transition: 'all 0.4s ease-in-out'
+                          transition: 'all 0.4s ease-in-out',
+                          display: 'block',
+                          WebkitTransform: 'translate3d(0, 0, 0)',
+                          transform: 'translate3d(0, 0, 0)',
+                          WebkitBackfaceVisibility: 'hidden',
+                          backfaceVisibility: 'hidden'
                         }}
                       />
                     </div>

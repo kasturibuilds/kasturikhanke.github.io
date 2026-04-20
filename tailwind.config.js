@@ -34,8 +34,8 @@ export default {
           '100%': { transform: 'rotate(500deg)' },
         },
         float: {
-          '0%, 100%': { transform: 'translate(-50%, -50%) translateY(0px)' },
-          '50%': { transform: 'translate(-50%, -50%) translateY(-10px)' },
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
