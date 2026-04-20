@@ -384,13 +384,13 @@ const App = () => {
                 ref={el => sectionsRef.current['home'] = el} 
                 className="min-h-screen md:h-full relative"
               >
-                <div className="w-full max-w-[90vw] mx-auto px-4 sm:px-6 md:px-8 flex flex-col md:flex-row justify-between items-center absolute top-8 md:top-[40%] md:-translate-y-1/2 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0">
+                <div className="w-full max-w-[90vw] mx-auto px-4 sm:px-6 md:px-8 pt-8 pb-16 md:pb-0 flex flex-col md:flex-row justify-start md:justify-between items-center relative md:absolute md:top-[40%] md:-translate-y-1/2 left-auto md:left-1/2 translate-x-0 md:-translate-x-1/2 gap-3 md:gap-0">
                   {/* Left column - increased width from 25% to 30% */}
                   <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="flex flex-col justify-right leading-relaxed w-full md:w-[30%] mb-2 md:mb-0 z-10"
+                    className="flex flex-col justify-right leading-relaxed w-full md:w-[30%] mb-0 z-10"
                     style={{ minWidth: 'auto', maxWidth: '100%' }}
                   >
                     <div className="relative">
@@ -436,8 +436,8 @@ const App = () => {
                     </div>
 
                     {/* Dynamic content container - add overflow handling */}
-                    <div className="min-h-[200px] md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-hidden">
-                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-900 min-h-[100px] md:h-[120px] text-center md:text-left">
+                    <div className="min-h-0 md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-visible md:overflow-hidden items-center md:items-start">
+                      <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-900 min-h-0 md:min-h-[100px] md:h-[120px] text-center md:text-left max-w-[22rem] md:max-w-none">
                         {selectedImage === "PDF Spaces" && (
                           <div>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">AI-powered document intelligence</span>
@@ -465,7 +465,7 @@ const App = () => {
                       </div>
                       
                       {/* CTA button - added mt-8 for more spacing */}
-                      <div className="mt-2 md:mt-8 text-center md:text-left">
+                      <div className="mt-3 md:mt-8 text-center md:text-left">
                         {(selectedImage === "PDF Spaces" ||
                           selectedImage === "AI Assistant Discovery" ||
                           selectedImage === "Credit reporting") && (
@@ -497,14 +497,14 @@ const App = () => {
                       scale: isContentLoaded ? 1 : 0.95
                     }}
                     transition={{ duration: 0.3, delay: 0.2 }}
-                    className="w-full md:w-[50%] h-[40vh] sm:h-[50vh] md:h-[85vh] flex items-center justify-center mt-2 mb-4 md:my-0"
+                    className="w-full md:w-[50%] min-h-[280px] sm:min-h-[360px] md:min-h-0 h-auto md:h-[85vh] flex items-center justify-center -mt-3 md:mt-2 mb-0 md:mb-4 md:my-0"
                   >
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full h-full flex items-center justify-center">
                       <img 
                         src={currentImage}
                         alt="Profile"
-                        className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full object-contain ${
-                          'animate-float'
+                        className={`block w-full max-w-[280px] sm:max-w-[360px] md:max-w-full md:max-h-full object-contain mx-auto md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 ${
+                          'md:animate-float'
                         }`}
                         style={{
                           transition: 'all 0.4s ease-in-out'
@@ -555,9 +555,9 @@ const App = () => {
                       y: isContentLoaded ? 0 : 20
                     }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="md:hidden w-full mt-4 pb-12 z-10"
+                    className="md:hidden w-full mt-2 pb-6 z-10"
                   >
-                    <div className="flex flex-wrap gap-2 justify-center">
+                    <div className="flex flex-wrap gap-2 justify-center max-w-[22rem] mx-auto">
                       {Object.keys(imageMap).map((text) => (
                         <button
                           key={text}
