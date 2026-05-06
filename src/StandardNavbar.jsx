@@ -6,7 +6,7 @@ const StandardNavbar = () => {
   // External links only
   const externalLinks = [
     { label: 'About Me', url: '/about' },
-    { label: 'Resume', url: 'https://drive.google.com/file/d/1ijEEhYCfvHS0GNsUY6bolmKYC__lkrJM/view' },
+    { label: 'Resume', url: 'https://drive.google.com/file/d/1jHe89QZl4kRFyzGxPmNQcpglLIhGq8y0/view?usp=sharing' },
     { label: 'Blog', url: 'https://beyondthefold.substack.com/' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/kasturikhanke/' }
   ];

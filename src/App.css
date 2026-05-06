@@ -69,4 +69,21 @@
       -ms-text-size-adjust: 100%;
     }
   }
+
+  /* Safari mobile image rendering fixes */
+  @supports (-webkit-touch-callout: none) {
+    img {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+  }
+
+  /* Force GPU acceleration for smoother image transitions on iOS Safari */
+  .hero-image-container img {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform, opacity;
+  }
   
