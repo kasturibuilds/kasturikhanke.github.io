@@ -9,6 +9,7 @@
     "deploy": "/usr/bin/git subtree push --prefix dist origin gh-pages || gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/create-static-routes.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
