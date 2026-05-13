@@ -4,7 +4,6 @@ import { join } from 'node:path';
 const distDir = 'dist';
 const routes = [
   'about',
-  'AIA',
   'aia',
   'design-system',
   'feedback',

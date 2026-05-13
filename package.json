@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "/usr/bin/git subtree push --prefix dist origin gh-pages || gh-pages -d dist",
+    "deploy": "node scripts/deploy-gh-pages.mjs",
     "dev": "vite",
     "build": "vite build",
     "postbuild": "node scripts/create-static-routes.mjs",
