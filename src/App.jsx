@@ -440,9 +440,9 @@ const App = () => {
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-900 min-h-0 md:min-h-[100px] md:h-[120px] text-center md:text-left max-w-[22rem] md:max-w-none">
                         {selectedImage === "PDF Spaces" && (
                           <div>
-                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">AI-powered document intelligence</span>
+                            <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">Shared document understanding</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
-                              Designed collaboration systems and custom AI agents for Adobe's collaborative document workspace.
+                              Turned scattered PDFs into a collaborative workspace for sharing, orientation, and AI-guided action.
                             </p>
                           </div>
                         )}
