@@ -89,7 +89,7 @@ const Feedback = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto flex justify-end">
             <a 
-              href="/AIA"
+              href="/aia"
               className="inline-block px-8 py-2 rounded-full border-2 border-black text-lg font-medium hover:bg-black hover:text-white transition-colors duration-300"
             >
               Next Project →
