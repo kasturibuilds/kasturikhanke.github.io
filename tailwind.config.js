@@ -9,10 +9,6 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'sans': ['Libre Franklin', 'sans-serif'],
-        'serif': ['"Sometimes Times BETA"', 'Times New Roman', 'serif'],
-      },
       animation: {
         'spin-three-times': 'spin 0.6s ease-in 1',
         float: 'float 3s ease-in-out infinite',
@@ -77,5 +73,3 @@ export default {
   },
   plugins: []
 }
-
-

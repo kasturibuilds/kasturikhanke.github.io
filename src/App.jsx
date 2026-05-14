@@ -12,7 +12,6 @@ import SezzleUp from './SezzleUp';
 import ImpactSection from './ImpactSection';
 import PDFSpaces from './PDFSpaces';
 import AppRoutes from './AppRoutes';
-import './assets/fonts.css';
 import Feedback from './Feedback';
 import { FaPause, FaPlay } from 'react-icons/fa';
 import About from './About'; // Add this import at the top with other imports
