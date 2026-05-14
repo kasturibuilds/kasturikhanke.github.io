@@ -77,8 +77,8 @@ const DesignSystem = () => {
             </div>
             <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">
               <div className="relative">
-              <h3 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-900">100%</h3>
-                <p className="text-lg text-gray-600">Improvement in consistency and efficiency</p>
+              <h3 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-900">~40%</h3>
+                <p className="text-lg text-gray-600">Reduction in design-to-dev handoff time</p>
               </div>
             </div>
             <div className="relative bg-white border-2 border-gray-100 p-12 rounded-3xl shadow-sm overflow-hidden">

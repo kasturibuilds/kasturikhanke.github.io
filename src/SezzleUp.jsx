@@ -635,7 +635,7 @@ const SezzleUp = () => {
                 <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">Increase in enrollment completion</h3>
               </div>
               <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-                Progressive disclosure reduced perceived complexity. Rage clicks on checklist labels dropped to near zero.
+                Progressive disclosure reduced perceived complexity. Rage clicks on checklist labels dropped to near zero, and post-launch satisfaction scores increased by 22%.
               </p>
             </motion.div>
 
@@ -672,6 +672,32 @@ const SezzleUp = () => {
                 10-point increase in Net Promoter Score after Sezzle Up launch. Measured via in-app survey 30 days post-enrollment.
               </p>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Additional Sezzle Growth Work */}
+        <section className="mb-16 md:mb-24">
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-10">
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Additional impact</p>
+            <h2 className="text-xl sm:text-2xl font-medium text-gray-900">Growth work beyond Sezzle Up</h2>
+          </div>
+
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="border-t border-gray-200 pt-6">
+              <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">#143 → #64</span>
+              <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-3">App Store Optimization</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                Identified critical UX issues through usability testing and NPS analysis. Design improvements contributed to an App Store ranking jump from #143 to #64 in Finance within 3 weeks.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-200 pt-6">
+              <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">40+</span>
+              <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-3">0→1 Affiliate Program</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                Designed the growth strategy for a new affiliate platform, aligned requirements across VPs, Engineering, and Customer Support, and delivered an MVP that launched with 40+ affiliates and increased revenue.
+              </p>
+            </div>
           </div>
         </section>
 

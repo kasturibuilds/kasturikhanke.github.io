@@ -16,7 +16,7 @@ const featureLabelClass = 'text-xs font-semibold text-gray-500 uppercase trackin
 const featureTitleClass = 'text-xl md:text-2xl font-medium mb-4 text-gray-900';
 const mediaCaptionClass = 'w-full text-center text-sm leading-relaxed text-gray-500';
 const figureClass = 'w-full space-y-4 my-10 md:my-12';
-const heroFigureClass = 'relative left-1/2 w-screen -translate-x-1/2 space-y-4 my-10 md:my-12';
+const heroFigureClass = 'w-full space-y-4 my-10 md:my-12';
 const imageClass = 'block w-full rounded-lg';
 const heroImageClass = 'block w-full h-auto';
 const featureVideoFrameClass = 'relative h-[400px] overflow-hidden rounded-lg bg-white md:h-[600px]';
@@ -80,6 +80,71 @@ const VideoCaseSection = ({ label, title, children, videoSrc, videoClass = featu
 
 const CopyBlock = ({ children }) => (
   <div className="space-y-5 max-w-3xl">{children}</div>
+);
+
+const ImpactSection = () => (
+  <section className="relative py-6 md:py-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
+      <div className="lg:sticky lg:top-24" style={{ height: 'min-content' }}>
+        <h2 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-lg sm:text-xl md:text-2xl font-medium text-gray-900">
+          Impact
+        </h2>
+      </div>
+
+      <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 grid grid-cols-1 gap-8 sm:grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)] md:gap-16">
+        <div className="min-w-0">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">Most shares</h3>
+          <p className="text-base sm:text-lg text-gray-600">
+            happened on mobile, making access, permissions, and handoff critical to the v1 experience
+          </p>
+        </div>
+        <div className="hidden w-px bg-gray-200 self-stretch min-h-[80px] sm:block" />
+        <div className="min-w-0">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">5+ comments</h3>
+          <p className="text-base sm:text-lg text-gray-600">
+            per Space, showing that shared Spaces were becoming collaborative work surfaces
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const ChallengeList = () => (
+  <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-10 border-t border-gray-200">
+    {[
+      {
+        number: '01',
+        title: 'Make the product legible',
+        body: 'PDF Spaces could not feel like “chat with a PDF” with more files attached. People needed to understand that a Space was a shared workspace with source material, generated context, collaborators, and AI behavior.'
+      },
+      {
+        number: '02',
+        title: 'Protect trust and control',
+        body: 'Collaboration changed the stakes. Access, roles, and recipient context had to feel explicit so people knew who could enter a Space and what each person could do there.'
+      },
+      {
+        number: '03',
+        title: 'Keep AI useful, not abstract',
+        body: 'Custom agents were powerful, but they needed to appear where people were already thinking about the work the AI should support, not as configuration hidden inside a sharing flow.'
+      }
+    ].map((challenge) => (
+      <motion.div
+        key={challenge.number}
+        className="grid grid-cols-1 gap-3 border-b border-gray-200 py-6 md:grid-cols-[96px_1fr] md:gap-8 md:py-8"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.16 }}
+      >
+        <span className="text-sm font-medium leading-relaxed text-gray-400">{challenge.number}</span>
+        <div className="max-w-3xl space-y-3">
+          <h3 className="text-xl md:text-2xl font-medium text-gray-900">{challenge.title}</h3>
+          <p className="text-base md:text-lg leading-relaxed text-gray-600">{challenge.body}</p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
 );
 
 const PDFSpaces = () => {
@@ -165,7 +230,7 @@ const PDFSpaces = () => {
             Acrobat PDF Spaces
           </h1>
           <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 max-w-4xl text-base sm:text-lg md:text-xl font-normal mb-6 md:mb-8 text-gray-600">
-            Building a collaborative AI workspace that brought files, people, context, and custom agents into one shared experience across Acrobat.
+            Building a collaborative AI workspace that brings files, people, context, and custom agents into one shared experience across Acrobat.
           </p>
 
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200 grid max-w-4xl grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-sm mb-8 md:mb-12">
@@ -193,11 +258,94 @@ const PDFSpaces = () => {
               alt="PDF Spaces interface showing collaborative AI workspace across desktop and mobile"
               className={heroImageClass}
             />
-            <figcaption className={`${mediaCaptionClass} max-w-4xl mx-auto px-8 sm:px-6`}>
-              The shipped PDF Spaces experience across collaboration, context, and AI-powered work.
-            </figcaption>
           </figure>
         </section>
+
+        <ImpactSection />
+
+        <CaseSection title="Project context">
+          <CopyBlock>
+            <p className={bodyClass}>
+              Acrobat has always been where people open important documents, but AI Assistant shifted the expectation from reading files to understanding and acting on them. PDF Spaces was the next step: a shared work surface where multiple PDFs, generated answers, notes, collaborators, and custom agents could live together.
+            </p>
+            <p className={bodyClass}>
+              The project started as a broad workspace vision and quickly became a launch problem. We needed to ship a v1 that felt ambitious enough to change how people worked with documents, but grounded enough to fit inside Acrobat’s existing mental models for files, sharing, and trust.
+            </p>
+          </CopyBlock>
+        </CaseSection>
+
+        <CaseSection title="The core challenge">
+          <CopyBlock>
+            <p className={bodyClass}>
+              The hard part was not only designing new surfaces. It was helping people understand a new product category inside a familiar tool. A Space had to feel more capable than a folder, more structured than a chat, and safer than an open-ended AI playground.
+            </p>
+            <p className={bodyClass}>
+              My role focused on the mobile experience, collaboration model, recipient landing experience, custom agent entry points, and the detailed specs needed to keep the product coherent across iOS, Android, and web.
+            </p>
+          </CopyBlock>
+          <ChallengeList />
+        </CaseSection>
+
+        <section className="mb-6 md:mb-8">
+          <div
+            className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10"
+            style={{
+              backgroundColor: '#0f0f0f',
+              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+              backgroundSize: '24px 24px'
+            }}
+          >
+            <div
+              className="rounded-xl md:rounded-2xl p-8 sm:p-12 md:p-16"
+              style={{
+                border: '1px solid rgba(255,255,255,0.12)',
+                backgroundColor: 'transparent'
+              }}
+            >
+              <h2 className="text-base sm:text-lg md:text-2xl font-medium text-white">
+                How might we help people move from static PDFs to a shared AI workspace without losing context, control, or trust?
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        <CaseSection title="Starting with the vision">
+          <CopyBlock>
+            <p className={bodyClass}>
+              Before the team could commit to individual features, we needed alignment on what a Space was. I helped shape early vision work and workshop discussions that made the product tangible for PMs, engineers, and leadership.
+            </p>
+            <p className={bodyClass}>
+              Mobile was the narrowest constraint, but the product vision had to work across desktop and web too. Large-screen concepts helped stakeholders see the full workspace model: source files, context, AI outputs, notes, and people in one coherent place.
+            </p>
+          </CopyBlock>
+          <figure className={figureClass}>
+            <div className={featureVideoFrameClass}>
+              <video
+                src="/Spaces_Vision.mov"
+                className={wideFeatureVideoClass}
+                aria-label="Large screen PDF Spaces vision"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <figcaption className={mediaCaptionClass}>
+              Vision work helped stakeholders align on PDF Spaces as a shared AI workspace, not another file-sharing surface.
+            </figcaption>
+          </figure>
+        </CaseSection>
+
+        <CaseSection title="From vision to shipped v1">
+          <CopyBlock>
+            <p className={bodyClass}>
+              Once the direction was aligned, the work became translating that broad vision into shippable mobile flows. The v1 experience had to make access, sharing, AI behavior, and recipient context feel like one connected system.
+            </p>
+          </CopyBlock>
+        </CaseSection>
 
         <VideoCaseSection
           label="Access"
@@ -256,6 +404,9 @@ const PDFSpaces = () => {
           <p className={bodyClass}>
             I pushed to move it into the input container instead. Sharing is about access. The agent is about behavior. People should customize AI when they are about to use AI, not when they are deciding who can enter the Space.
           </p>
+          <p className={bodyClass}>
+            Across the custom agent track, I partnered with PMs, researchers, and AI/ML engineers to evaluate 15+ concepts and prioritize 5 for the v1 experience.
+          </p>
         </VideoCaseSection>
 
         <VideoCaseSection
@@ -272,36 +423,6 @@ const PDFSpaces = () => {
             Overview became the sender’s way to shape the first read. It gave the Space a front door: files, generated summaries, audio, and a clear sense of what the recipient was walking into.
           </p>
         </VideoCaseSection>
-
-        <CaseSection title="Getting stakeholder buy in: building the vision for large screens">
-          <CopyBlock>
-            <p className={bodyClass}>
-              Mobile was the narrowest constraint, but the product vision had to work across desktop and web too. To align PMs, engineers, and leadership, I used large-screen concepts to show how Spaces could become more than a mobile share flow.
-            </p>
-            <p className={bodyClass}>
-              Those larger views made the system easier to discuss: a Space could hold source files, context, AI outputs, notes, and people in one coherent workspace.
-            </p>
-          </CopyBlock>
-          <figure className={figureClass}>
-            <div className={featureVideoFrameClass}>
-              <video
-                src="/Spaces_Vision.mov"
-                className={wideFeatureVideoClass}
-                aria-label="Large screen PDF Spaces vision"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <figcaption className={mediaCaptionClass}>
-              Large-screen vision work helped stakeholders see the full workspace model.
-            </figcaption>
-          </figure>
-        </CaseSection>
 
         <VideoCaseSection
           label="Recipient experience"

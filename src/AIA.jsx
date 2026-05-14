@@ -155,13 +155,13 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
 
               <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 flex items-start gap-8 md:gap-16">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">↑</h3>
-                  <p className="text-base sm:text-lg text-gray-600">Increase in active usage</p>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">38%</h3>
+                  <p className="text-base sm:text-lg text-gray-600">Increase in AI feature engagement</p>
                 </div>
                 <div className="w-px bg-gray-200 self-stretch min-h-[80px]"></div>
                 <div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">↑</h3>
-                  <p className="text-base sm:text-lg text-gray-600">Increase in conversion rate when users interacted with all touchpoints</p>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">34%</h3>
+                  <p className="text-base sm:text-lg text-gray-600">Lift in AI subscriptions after scaled onboarding</p>
                 </div>
               </div>
             </div>
@@ -213,100 +213,53 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
         </div>
          </section> */}
 
-        <section className="mb-16 md:mb-32">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-12 md:mb-16">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Learnings</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">What I learned</h2>
+        <section className="relative pt-10 pb-20 md:pt-14 md:pb-24">
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out space-y-5">
+            <h2 className="max-w-3xl text-base sm:text-lg font-medium leading-relaxed text-gray-950">What I learned</h2>
+            <p className="max-w-3xl text-base md:text-lg leading-relaxed text-gray-600">
+              This work changed how I think about launching AI in mature products. The right discovery model was less about announcing a feature and more about meeting people at the moment the feature could actually help.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-            {/* Learning 1 - Dark */}
-            <motion.div 
-              className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-gray-950 p-6 md:p-8 rounded-2xl md:rounded-3xl min-h-[320px] md:min-h-[380px] flex flex-col justify-between"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <div>
-                <span className="text-2xl md:text-3xl font-light text-white/80 mb-3 block">01</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">Discovery is a system, not a feature</h3>
-              </div>
-              <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                Each touchpoint worked because they were designed as an interconnected system, not isolated features.
-              </p>
-            </motion.div>
-
-            {/* Learning 2 - Light */}
-            <motion.div 
-              className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-200 min-h-[320px] md:min-h-[380px] flex flex-col justify-between"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <div>
-                <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">02</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">AI needs different discovery patterns</h3>
-              </div>
-              <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-                Traditional "new feature" announcements don't work for AI. Users need to see concrete use cases and experience value immediately.
-              </p>
-            </motion.div>
-
-            {/* Learning 3 - Dark with Image */}
-            <motion.div 
-              className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-gray-950 p-6 md:p-8 rounded-2xl md:rounded-3xl min-h-[320px] md:min-h-[380px] flex flex-col justify-between overflow-hidden"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              {/* Background image with blur effect */}
-              <div 
-                className="absolute inset-0 opacity-40"
-                style={{
-                  backgroundImage: 'url(/Splash.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  filter: 'blur(8px) brightness(0.6)',
-                }}
-              />
-              <div className="relative z-10">
-                <span className="text-2xl md:text-3xl font-light text-white/80 mb-3 block">03</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">Mobile AI requires new interaction patterns</h3>
-              </div>
-              <ul className="relative z-10 text-sm md:text-base text-white/70 leading-relaxed space-y-2">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
-                  Suggested prompts (tap, don't type)
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
-                  Text selection as primary entry point
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Learning 4 - Light */}
-            <motion.div 
-              className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out relative bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-200 min-h-[320px] md:min-h-[380px] flex flex-col justify-between"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <div>
-                <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">04</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">Design for habit formation</h3>
-              </div>
-              <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-                We focused on discovery and activation, but in retrospect, we didn't design enough for habit formation. Recurring prompts or features and solutions that turn first-time users into regular users. I would look more into mechanisms to keep bringing back users to use something that adds value to their lives. 
-              </p>
-            </motion.div>
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-10 border-t border-gray-200">
+            {[
+              {
+                number: '01',
+                title: 'Discovery is a system, not a feature',
+                body: 'Each touchpoint worked because it was part of a connected journey from awareness to understanding to activation, not an isolated promotional surface.'
+              },
+              {
+                number: '02',
+                title: 'AI needs different discovery patterns',
+                body: 'Traditional new-feature announcements were not enough. People needed concrete use cases, clear timing, and a fast path to experience value.'
+              },
+              {
+                number: '03',
+                title: 'Mobile AI asks for lower-friction inputs',
+                body: 'Suggested prompts, text selection, and contextual entry points mattered because tapping is easier than composing a perfect question on a small screen.'
+              },
+              {
+                number: '04',
+                title: 'Activation should lead toward habit',
+                body: 'The framework helped people try AI Assistant, but the next layer would be designing repeat value: the moments that bring someone back because the tool keeps helping.'
+              }
+            ].map((learning) => (
+              <motion.div
+                key={learning.number}
+                className="grid grid-cols-1 gap-3 border-b border-gray-200 py-6 md:grid-cols-[96px_1fr] md:gap-8 md:py-8"
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, amount: 0.16 }}
+              >
+                <span className="text-sm font-medium leading-relaxed text-gray-400">{learning.number}</span>
+                <div className="max-w-3xl space-y-3">
+                  <h3 className="text-xl md:text-2xl font-medium text-gray-900">{learning.title}</h3>
+                  <p className="text-base md:text-lg leading-relaxed text-gray-600">{learning.body}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-
-          
         </section>
          
          <section className="mb-16 md:mb-32">
