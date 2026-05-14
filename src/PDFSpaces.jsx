@@ -16,11 +16,14 @@ const featureLabelClass = 'text-xs font-semibold text-gray-500 uppercase trackin
 const featureTitleClass = 'text-xl md:text-2xl font-medium mb-4 text-gray-900';
 const mediaCaptionClass = 'w-full text-center text-sm leading-relaxed text-gray-500';
 const figureClass = 'w-full space-y-4 my-10 md:my-12';
+const heroFigureClass = 'relative left-1/2 w-screen -translate-x-1/2 -ml-8 sm:-ml-6 space-y-4 my-10 md:my-12';
 const imageClass = 'block w-full rounded-lg';
+const heroImageClass = 'block w-full h-auto';
 const featureVideoFrameClass = 'relative h-[400px] overflow-hidden rounded-lg bg-white md:h-[600px]';
 const featureVideoClass = 'h-full w-full rounded-lg object-cover scale-[1.04]';
 const croppedFeatureVideoClass = 'h-full w-full rounded-lg object-cover scale-[1.08]';
 const assistantFeatureVideoClass = 'h-full w-full rounded-lg object-cover scale-[1.2]';
+const wideFeatureVideoClass = 'h-full w-full rounded-lg bg-gray-950 object-contain';
 
 const CaseSection = ({ title, children }) => (
   <motion.section
@@ -184,13 +187,13 @@ const PDFSpaces = () => {
             </div>
           </div>
 
-          <figure className={`scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-300 ${figureClass}`}>
+          <figure className={`scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-300 ${heroFigureClass}`}>
             <img
-              src="/Spaces_hero.png"
+              src="/Spaces_cover.png"
               alt="PDF Spaces interface showing collaborative AI workspace across desktop and mobile"
-              className={imageClass}
+              className={heroImageClass}
             />
-            <figcaption className={mediaCaptionClass}>
+            <figcaption className={`${mediaCaptionClass} max-w-4xl mx-auto px-8 sm:px-6`}>
               The shipped PDF Spaces experience across collaboration, context, and AI-powered work.
             </figcaption>
           </figure>
@@ -237,12 +240,12 @@ const PDFSpaces = () => {
           after={(
             <figure className={`${figureClass} mt-10 md:mt-12`}>
               <img
-                src="/Shippedagent.png"
-                alt="Shipped layered agent system across PDF Spaces mobile surfaces"
+                src="/Spaces_CAcustomization.png"
+                alt="Custom agent customization options for PDF Spaces"
                 className={imageClass}
               />
               <figcaption className={mediaCaptionClass}>
-                The shipped system made agents visible at the moment of use.
+                Customization stayed focused on the choices that shaped how the assistant should behave.
               </figcaption>
             </figure>
           )}
@@ -258,7 +261,7 @@ const PDFSpaces = () => {
         <VideoCaseSection
           label="Overview"
           title="Letting senders craft a narrative with an Overview page for their recipients"
-          videoSrc="/Spaces_recipient_landing.mov"
+          videoSrc="/Spaces_edit.mov"
           ariaLabel="Recipient landing experience for PDF Spaces"
           caption="Overview helped recipients understand the Space before they had to ask a question."
         >
@@ -280,11 +283,20 @@ const PDFSpaces = () => {
             </p>
           </CopyBlock>
           <figure className={figureClass}>
-            <img
-              src="/HeroSpaces.png"
-              alt="Large screen PDF Spaces vision"
-              className={imageClass}
-            />
+            <div className={featureVideoFrameClass}>
+              <video
+                src="/Spaces_Vision.mov"
+                className={wideFeatureVideoClass}
+                aria-label="Large screen PDF Spaces vision"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <figcaption className={mediaCaptionClass}>
               Large-screen vision work helped stakeholders see the full workspace model.
             </figcaption>
@@ -315,16 +327,6 @@ const PDFSpaces = () => {
               I created detailed specs, reviewed builds, tracked edge cases across iOS and Android, and QA’d the flows so the product held together in someone’s hand.
             </p>
           </CopyBlock>
-          <figure className={figureClass}>
-            <img
-              src="/Personality.png"
-              alt="Mobile custom assistant personality settings"
-              className={imageClass}
-            />
-            <figcaption className={mediaCaptionClass}>
-              Mobile constraints forced each assistant setting to earn its place.
-            </figcaption>
-          </figure>
         </CaseSection>
 
         <CaseSection title="Reflection">
