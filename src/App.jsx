@@ -48,7 +48,9 @@ const App = () => {
   const [isContentLoaded, setIsContentLoaded] = useState(true);
   const [showNav, setShowNav] = useState(true);
   const [sfTime, setSfTime] = useState('');
+  const [heroRevealKey, setHeroRevealKey] = useState(0);
   const hasPausedAfterFirstCycleRef = useRef(false);
+  const heroTransitionIdRef = useRef(0);
 
   // Update San Francisco time
   useEffect(() => {
@@ -147,34 +149,46 @@ const App = () => {
   }, [fromCaseStudy]);
 
   // Update the typeWriter function to return a Promise
-  const typeWriter = async (text, delay = 50) => {
+  const typeWriter = async (text, delay = 50, transitionId = heroTransitionIdRef.current) => {
     setIsTyping(true);
     setDisplayText('');
     
     return new Promise(resolve => {
       let i = 0;
       const interval = setInterval(() => {
+        if (transitionId !== heroTransitionIdRef.current) {
+          clearInterval(interval);
+          resolve(false);
+          return;
+        }
+
         setDisplayText(text.substring(0, i + 1));
         i++;
         if (i >= text.length) {
           clearInterval(interval);
           setIsTyping(false);
-          resolve();
+          resolve(true);
         }
       }, delay);
     });
   };
 
   // Add new eraseText function
-  const eraseText = async (text, delay = 50) => {
+  const eraseText = async (text, delay = 50, transitionId = heroTransitionIdRef.current) => {
     return new Promise(resolve => {
       let i = text.length;
       const interval = setInterval(() => {
+        if (transitionId !== heroTransitionIdRef.current) {
+          clearInterval(interval);
+          resolve(false);
+          return;
+        }
+
         setDisplayText(text.substring(0, i));
         i--;
         if (i < 0) {
           clearInterval(interval);
-          resolve();
+          resolve(true);
         }
       }, delay);
     });
@@ -191,10 +205,12 @@ const App = () => {
       const nextImage = imageKeys[nextIndex];
       const shouldPauseAfterTransition =
         nextImage === "PDF Spaces" && !hasPausedAfterFirstCycleRef.current;
+      const transitionId = ++heroTransitionIdRef.current;
       
       // First erase the current text
       setIsHeroTransitioning(true);
-      await eraseText(HERO_TEXT_MAP[selectedImage]);
+      const didErase = await eraseText(HERO_TEXT_MAP[selectedImage], 50, transitionId);
+      if (!didErase || transitionId !== heroTransitionIdRef.current) return;
       
       // Update image after erasing text
       setSelectedImage(nextImage);
@@ -202,9 +218,11 @@ const App = () => {
 
       // Short pause before typing new text
       await new Promise(resolve => setTimeout(resolve, 200));
+      if (transitionId !== heroTransitionIdRef.current) return;
       
       // Type the new text
-      await typeWriter(HERO_TEXT_MAP[nextImage]);
+      const didType = await typeWriter(HERO_TEXT_MAP[nextImage], 50, transitionId);
+      if (!didType || transitionId !== heroTransitionIdRef.current) return;
       setIsHeroTransitioning(false);
 
       if (shouldPauseAfterTransition) {
@@ -216,22 +234,15 @@ const App = () => {
     return () => clearInterval(interval);
   }, [selectedImage, isPaused]);
 
-  // Update the click handler in the right section to include erase effect
-  const handleImageClick = async (text) => {
-    // Erase current text first
-    setIsHeroTransitioning(true);
-    await eraseText(HERO_TEXT_MAP[selectedImage]);
-    
-    // Update image
+  const handleImageClick = (text) => {
+    ++heroTransitionIdRef.current;
+    setIsPaused(true);
+    setIsTyping(false);
+    setIsHeroTransitioning(false);
     setSelectedImage(text);
     setCurrentImage(IMAGE_MAP[text]);
-    
-    // Short pause before typing new text
-    await new Promise(resolve => setTimeout(resolve, 200));
-    
-    // Type new text
-    await typeWriter(HERO_TEXT_MAP[text]);
-    setIsHeroTransitioning(false);
+    setDisplayText(HERO_TEXT_MAP[text]);
+    setHeroRevealKey(key => key + 1);
   };
 
   const handleNavClick = (page) => {
@@ -406,7 +417,7 @@ const App = () => {
                     <div className="min-h-[156px] sm:min-h-[176px] md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-visible items-center md:items-start">
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-900 min-h-0 md:min-h-[100px] md:h-[120px] text-center md:text-left max-w-[22rem] md:max-w-none">
                         {isHeroSettled && selectedImage === "PDF Spaces" && (
-                          <div>
+                          <div key={`pdf-spaces-${heroRevealKey}`}>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">Shared document understanding</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Turned scattered PDFs into a collaborative workspace for sharing, orientation, and AI-guided action.
@@ -414,7 +425,7 @@ const App = () => {
                           </div>
                         )}
                         {isHeroSettled && selectedImage === "AI Assistant Discovery" && (
-                          <div>
+                          <div key={`ai-assistant-discovery-${heroRevealKey}`}>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↑ in conversion rate</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Drove discovery and engagement for a newly launched AI assistant through strategic in-product promotion.
@@ -422,7 +433,7 @@ const App = () => {
                           </div>
                         )}
                         {isHeroSettled && selectedImage === "Credit reporting" && (
-                          <div>
+                          <div key={`credit-reporting-${heroRevealKey}`}>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">70% ↑ in conversion rate</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
                               Led end-to-end design for the first BNPL credit reporting flow—key to landing a partnership with Target.
