@@ -48,6 +48,7 @@ const App = () => {
   const [isContentLoaded, setIsContentLoaded] = useState(true);
   const [showNav, setShowNav] = useState(true);
   const [sfTime, setSfTime] = useState('');
+  const hasPausedAfterFirstCycleRef = useRef(false);
 
   // Update San Francisco time
   useEffect(() => {
@@ -188,6 +189,8 @@ const App = () => {
       const currentIndex = imageKeys.indexOf(selectedImage);
       const nextIndex = (currentIndex + 1) % imageKeys.length;
       const nextImage = imageKeys[nextIndex];
+      const shouldPauseAfterTransition =
+        nextImage === "PDF Spaces" && !hasPausedAfterFirstCycleRef.current;
       
       // First erase the current text
       setIsHeroTransitioning(true);
@@ -203,6 +206,11 @@ const App = () => {
       // Type the new text
       await typeWriter(HERO_TEXT_MAP[nextImage]);
       setIsHeroTransitioning(false);
+
+      if (shouldPauseAfterTransition) {
+        hasPausedAfterFirstCycleRef.current = true;
+        setIsPaused(true);
+      }
     }, 4000);
 
     return () => clearInterval(interval);
@@ -353,7 +361,7 @@ const App = () => {
                     style={{ minWidth: 'auto', maxWidth: '100%' }}
                   >
                     <div className="relative">
-                      <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 text-gray-900 text-center md:text-left">
+                      <h1 className="mobile-hero-title text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 text-gray-900 text-center md:text-left">
                         <motion.span 
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
@@ -395,7 +403,7 @@ const App = () => {
                     </div>
 
                     {/* Dynamic content container - add overflow handling */}
-                    <div className="min-h-0 md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-visible items-center md:items-start">
+                    <div className="min-h-[156px] sm:min-h-[176px] md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-visible items-center md:items-start">
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-900 min-h-0 md:min-h-[100px] md:h-[120px] text-center md:text-left max-w-[22rem] md:max-w-none">
                         {isHeroSettled && selectedImage === "PDF Spaces" && (
                           <div>
