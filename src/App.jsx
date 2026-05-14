@@ -17,29 +17,37 @@ import { FaPause, FaPlay } from 'react-icons/fa';
 import About from './About'; // Add this import at the top with other imports
 import { motion } from 'framer-motion'; // Add this import at the top
 
+const DEFAULT_HERO_TEXT = "collaboration.";
+
+const IMAGE_MAP = {
+  "PDF Spaces": "Spaces.jpg",
+  "AI Assistant Discovery": "Splash.jpg",
+  "Credit reporting": "sezzle-up.jpg"
+};
+
+const HERO_TEXT_MAP = {
+  "PDF Spaces": "collaboration.",
+  "AI Assistant Discovery": "conversion.",
+  "Credit reporting": "trust."
+};
+
 const App = () => {
   // Check if coming from case study page
   const urlParams = new URLSearchParams(window.location.search);
   const fromCaseStudy = urlParams.get('fromCaseStudy') === 'true';
   
   const [activePage, setActivePage] = useState('home');
-  const [currentImage, setCurrentImage] = useState("Landing Page.jpg");
-  const [selectedImage, setSelectedImage] = useState("Landing page");
+  const [currentImage, setCurrentImage] = useState("Spaces.jpg");
+  const [selectedImage, setSelectedImage] = useState("PDF Spaces");
   const sectionsRef = useRef({});
   const [isScrolled, setIsScrolled] = useState(false);
-  const [displayText, setDisplayText] = useState(fromCaseStudy ? "collaboration." : "");
+  const [displayText, setDisplayText] = useState(DEFAULT_HERO_TEXT);
   const [isTyping, setIsTyping] = useState(false);
+  const [isHeroTransitioning, setIsHeroTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isInitialLoad, setIsInitialLoad] = useState(!fromCaseStudy);
-  const [isContentLoaded, setIsContentLoaded] = useState(fromCaseStudy);
-  const [showNav, setShowNav] = useState(fromCaseStudy);
+  const [isContentLoaded, setIsContentLoaded] = useState(true);
+  const [showNav, setShowNav] = useState(true);
   const [sfTime, setSfTime] = useState('');
-
-  const imageMap = {
-    "PDF Spaces": "Spaces.jpg",
-    "AI Assistant Discovery": "Splash.jpg",
-    "Credit reporting": "sezzle-up.jpg"
-  };
 
   // Update San Francisco time
   useEffect(() => {
@@ -123,60 +131,19 @@ const App = () => {
     return () => window.removeEventListener('scroll', scrollHandler);
   }, []);
 
-  // Modify this useEffect to handle the initial animation and nav timing
+  // Keep return visits from case studies on the default hero without replaying intro animation.
   useEffect(() => {
-    // If coming from case study, skip all animations and show content immediately
     if (fromCaseStudy) {
       setCurrentImage("Spaces.jpg");
       setSelectedImage("PDF Spaces");
-      // Show CTA button immediately
-      setTimeout(() => {
-        const ctaButton = document.querySelector('.animate-fade-in-3');
-        if (ctaButton) {
-          ctaButton.style.opacity = '1';
-        }
-      }, 100);
-      // Remove query parameter from URL without reload
+      setDisplayText(DEFAULT_HERO_TEXT);
+      setIsTyping(false);
+      setIsHeroTransitioning(false);
+      setIsContentLoaded(true);
+      setShowNav(true);
       window.history.replaceState({}, '', '/');
-      return;
     }
-    
-    if (isInitialLoad) {
-      setIsInitialLoad(false);
-      
-      setTimeout(() => {
-        setShowNav(true);
-        typeWriter("what's next.", 80)
-          .then(() => {
-            return new Promise(resolve => setTimeout(resolve, 800));
-          })
-          .then(() => {
-            return eraseText("what's next.", 50);
-          })
-          .then(() => {
-            setTimeout(() => {
-              typeWriter("collaboration.", 80)
-                .then(() => {
-                  // Show image, title and description first
-                  setTimeout(() => {
-                    setIsContentLoaded(true);
-                    setCurrentImage("Spaces.jpg");
-                    setSelectedImage("PDF Spaces");
-                    
-                    // Add a delay before showing the CTA button
-                    setTimeout(() => {
-                      const ctaButton = document.querySelector('.animate-fade-in-3');
-                      if (ctaButton) {
-                        ctaButton.style.opacity = '1';
-                      }
-                    }, 800); // Delay after content loads
-                  }, 160);
-                });
-            }, 400);
-          });
-      }, 1200);
-    }
-  }, [fromCaseStudy, isInitialLoad]);
+  }, [fromCaseStudy]);
 
   // Update the typeWriter function to return a Promise
   const typeWriter = async (text, delay = 50) => {
@@ -190,7 +157,7 @@ const App = () => {
         i++;
         if (i >= text.length) {
           clearInterval(interval);
-          // Don't set isTyping to false - keep cursor blinking
+          setIsTyping(false);
           resolve();
         }
       }, delay);
@@ -217,55 +184,46 @@ const App = () => {
     if (isPaused) return;
 
     const interval = setInterval(async () => {
-      const imageKeys = Object.keys(imageMap);
+      const imageKeys = Object.keys(IMAGE_MAP);
       const currentIndex = imageKeys.indexOf(selectedImage);
       const nextIndex = (currentIndex + 1) % imageKeys.length;
       const nextImage = imageKeys[nextIndex];
       
-      // Text mapping for the words
-      const textMap = {
-        "PDF Spaces": "collaboration.",
-        "AI Assistant Discovery": "conversion.",
-        "Credit reporting": "trust."
-      };
-
       // First erase the current text
-      await eraseText(textMap[selectedImage]);
+      setIsHeroTransitioning(true);
+      await eraseText(HERO_TEXT_MAP[selectedImage]);
       
       // Update image after erasing text
       setSelectedImage(nextImage);
-      setCurrentImage(imageMap[nextImage]);
+      setCurrentImage(IMAGE_MAP[nextImage]);
 
       // Short pause before typing new text
       await new Promise(resolve => setTimeout(resolve, 200));
       
       // Type the new text
-      await typeWriter(textMap[nextImage]);
+      await typeWriter(HERO_TEXT_MAP[nextImage]);
+      setIsHeroTransitioning(false);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [selectedImage, imageMap, isPaused]);
+  }, [selectedImage, isPaused]);
 
   // Update the click handler in the right section to include erase effect
   const handleImageClick = async (text) => {
-    const textMap = {
-      "PDF Spaces": "collaboration.",
-      "AI Assistant Discovery": "conversion.",
-      "Credit reporting": "trust."
-    };
-
     // Erase current text first
-    await eraseText(textMap[selectedImage]);
+    setIsHeroTransitioning(true);
+    await eraseText(HERO_TEXT_MAP[selectedImage]);
     
     // Update image
     setSelectedImage(text);
-    setCurrentImage(imageMap[text]);
+    setCurrentImage(IMAGE_MAP[text]);
     
     // Short pause before typing new text
     await new Promise(resolve => setTimeout(resolve, 200));
     
     // Type new text
-    await typeWriter(textMap[text]);
+    await typeWriter(HERO_TEXT_MAP[text]);
+    setIsHeroTransitioning(false);
   };
 
   const handleNavClick = (page) => {
@@ -353,6 +311,8 @@ const App = () => {
     }
   ];
 
+  const isHeroSettled = !isHeroTransitioning && displayText === HERO_TEXT_MAP[selectedImage];
+
   return (
     <Router>
       <Routes>
@@ -435,9 +395,9 @@ const App = () => {
                     </div>
 
                     {/* Dynamic content container - add overflow handling */}
-                    <div className="min-h-0 md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-visible md:overflow-hidden items-center md:items-start">
+                    <div className="min-h-0 md:h-[240px] mt-3 md:mt-4 flex flex-col justify-start md:justify-between overflow-visible items-center md:items-start">
                       <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-gray-900 min-h-0 md:min-h-[100px] md:h-[120px] text-center md:text-left max-w-[22rem] md:max-w-none">
-                        {selectedImage === "PDF Spaces" && (
+                        {isHeroSettled && selectedImage === "PDF Spaces" && (
                           <div>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">Shared document understanding</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
@@ -445,7 +405,7 @@ const App = () => {
                             </p>
                           </div>
                         )}
-                        {selectedImage === "AI Assistant Discovery" && (
+                        {isHeroSettled && selectedImage === "AI Assistant Discovery" && (
                           <div>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">↑ in conversion rate</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
@@ -453,7 +413,7 @@ const App = () => {
                             </p>
                           </div>
                         )}
-                        {selectedImage === "Credit reporting" && (
+                        {isHeroSettled && selectedImage === "Credit reporting" && (
                           <div>
                             <span className="font-sans font-light opacity-0 animate-fade-in-stat whitespace-nowrap text-sm sm:text-base md:text-lg">70% ↑ in conversion rate</span>
                             <p className="text-sm sm:text-base font-normal mt-2 opacity-0 animate-fade-in-description">
@@ -478,7 +438,7 @@ const App = () => {
                             className="inline-block"
                           >
                             <button className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-black text-black flex items-center gap-2 text-sm sm:text-base hover:bg-black hover:text-white transition-colors duration-300 ${
-                              !isTyping ? 'animate-fade-in-3' : ''
+                              isHeroSettled ? 'opacity-0 animate-fade-in-3' : 'opacity-0'
                             }`}>             
                               read case study →
                             </button>
@@ -531,7 +491,7 @@ const App = () => {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="hidden md:flex flex-col justify-center space-y-4 w-[20%] z-10"
                   >
-                    {Object.keys(imageMap).map((text) => (
+                    {Object.keys(IMAGE_MAP).map((text) => (
                       <div
                         key={text}
                         className={`text-sm whitespace-nowrap font-medium cursor-pointer transition-all duration-500 ease-in-out ${
@@ -566,7 +526,7 @@ const App = () => {
                     className="md:hidden w-full mt-2 pb-6 z-10"
                   >
                     <div className="flex flex-wrap gap-2 justify-center max-w-[22rem] mx-auto">
-                      {Object.keys(imageMap).map((text) => (
+                      {Object.keys(IMAGE_MAP).map((text) => (
                         <button
                           key={text}
                           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${

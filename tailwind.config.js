@@ -12,15 +12,15 @@ export default {
       animation: {
         'spin-three-times': 'spin 0.6s ease-in 1',
         float: 'float 3s ease-in-out infinite',
-        'fade-in-1': 'fadeIn 0.8s ease-out forwards',
-        'fade-in-2': 'fadeIn 0.8s ease-out 0.3s forwards',
-        'fade-in-3': 'fadeIn 0.8s ease-out 0.6s forwards',
-        'fade-in-stat': 'fadeIn 0.5s ease-in forwards 0.5s',
-        'fade-in-description': 'fadeIn 0.5s ease-in forwards 1s',
-        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-        'fade-in-up-delay-1': 'fadeInUp 0.8s ease-out 0.2s forwards',
-        'fade-in-up-delay-2': 'fadeInUp 0.8s ease-out 0.4s forwards',
-        'fade-in-up-delay-3': 'fadeInUp 0.8s ease-out 0.6s forwards',
+        'fade-in-1': 'fadeIn 0.35s ease-out forwards',
+        'fade-in-2': 'fadeIn 0.35s ease-out 0.12s forwards',
+        'fade-in-3': 'ctaRiseIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.06s forwards',
+        'fade-in-stat': 'fadeIn 0.25s ease-in forwards 0.12s',
+        'fade-in-description': 'fadeIn 0.25s ease-in forwards 0.22s',
+        'fade-in-up': 'fadeInUp 0.4s ease-out forwards',
+        'fade-in-up-delay-1': 'fadeInUp 0.4s ease-out 0.1s forwards',
+        'fade-in-up-delay-2': 'fadeInUp 0.4s ease-out 0.2s forwards',
+        'fade-in-up-delay-3': 'fadeInUp 0.4s ease-out 0.3s forwards',
         'slot-machine': 'slot-machine 0.3s ease-out forwards',
         'typewriter': 'typing 3.5s steps(40, end)',
       },
@@ -35,6 +35,11 @@ export default {
         },
         fadeIn: {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        },
+        ctaRiseIn: {
+          '0%': { opacity: '0', transform: 'translateY(96px)' },
+          '24%': { opacity: '1' },
           '100%': { opacity: '1', transform: 'translateY(0)' }
         },
         fadeInUp: {
