@@ -118,7 +118,7 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
         <section className="mb-12 md:mb-16">
           <h1 className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 leading-tight text-gray-900">Making AI Discoverable: Adobe Acrobat AI</h1>
           <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 text-base sm:text-lg md:text-xl font-normal leading mb-6 md:mb-8 text-gray-600">
-            How I designed a contextual discovery system that increased AI Assistant adoption by 38% while reducing notification fatigue.
+            How I helped mobile users discover and understand Acrobat AI Assistant at the right moment, increasing adoption while reducing notification fatigue.
           </p>
           {/* Role Details */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-200 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-sm mb-8 md:mb-12">
@@ -128,11 +128,11 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
             </div>
             <div>
               <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Timeline</p>
-              <p className="text-gray-900">March '24 to May '24</p>
+              <p className="text-gray-900">Launch discovery sprint</p>
             </div>
             <div>
               <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Award</p>
-              <p className="text-gray-900">Time Best Innovation 2024</p>
+              <p className="text-gray-900">Industry-recognized launch</p>
             </div>
             <div>
               <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Platform</p>
@@ -155,12 +155,12 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
 
               <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out delay-100 flex items-start gap-8 md:gap-16">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">38%</h3>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">Higher engagement</h3>
                   <p className="text-base sm:text-lg text-gray-600">Increase in AI feature engagement</p>
                 </div>
                 <div className="w-px bg-gray-200 self-stretch min-h-[80px]"></div>
                 <div>
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">34%</h3>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">Subscription lift</h3>
                   <p className="text-base sm:text-lg text-gray-600">Lift in AI subscriptions after scaled onboarding</p>
                 </div>
               </div>
@@ -224,35 +224,35 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-10 border-t border-gray-200">
             {[
               {
-                number: '01',
+                label: 'System',
                 title: 'Discovery is a system, not a feature',
                 body: 'Each touchpoint worked because it was part of a connected journey from awareness to understanding to activation, not an isolated promotional surface.'
               },
               {
-                number: '02',
+                label: 'Timing',
                 title: 'AI needs different discovery patterns',
                 body: 'Traditional new-feature announcements were not enough. People needed concrete use cases, clear timing, and a fast path to experience value.'
               },
               {
-                number: '03',
+                label: 'Input',
                 title: 'Mobile AI asks for lower-friction inputs',
                 body: 'Suggested prompts, text selection, and contextual entry points mattered because tapping is easier than composing a perfect question on a small screen.'
               },
               {
-                number: '04',
+                label: 'Habit',
                 title: 'Activation should lead toward habit',
                 body: 'The framework helped people try AI Assistant, but the next layer would be designing repeat value: the moments that bring someone back because the tool keeps helping.'
               }
             ].map((learning) => (
               <motion.div
-                key={learning.number}
+                key={learning.label}
                 className="grid grid-cols-1 gap-3 border-b border-gray-200 py-6 md:grid-cols-[96px_1fr] md:gap-8 md:py-8"
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true, amount: 0.16 }}
               >
-                <span className="text-sm font-medium leading-relaxed text-gray-400">{learning.number}</span>
+                <span className="text-sm font-medium leading-relaxed text-gray-400">{learning.label}</span>
                 <div className="max-w-3xl space-y-3">
                   <h3 className="text-xl md:text-2xl font-medium text-gray-900">{learning.title}</h3>
                   <p className="text-base md:text-lg leading-relaxed text-gray-600">{learning.body}</p>
@@ -269,7 +269,7 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
           </div>
 
           <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600 mb-6 md:mb-8">
-            This project reinforced that AI products need fundamentally different discovery patterns than traditional features. Users don't wake up wanting to "use AI" especially back in 2024. Acrobat users use the tool to read a contract or understand a research paper. The framework I designed solved the discovery challenge by meeting users in their moment of need and not a moment of wanting to promote a feature. 
+            This project reinforced that AI features need contextual discovery. People don't open Acrobat because they want to "use AI." They open it to read a contract, understand a research paper, or find something important in a document. The framework I designed met users in those moments instead of asking them to learn a new feature before seeing value.
           </p>
 
           <p className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600">
@@ -277,38 +277,6 @@ if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
           </p>
         </section>
          
-         {/* Key Learnings Section
-         <section className="mb-24">
-           <h2 className="text-3xl font-semibold mb-12">Key Learnings</h2>
-           <div className="text-xl space-y-12">
-             <p>
-               This framework saw a 32% increase in conversion rate when users interacted with the at least 2 promotions, signalling positive results. Some key takeaways:
-             </p>
-          
-             <div>
-               <strong>User Awareness is Critical for New Features:</strong>
-               <p className="mt-4">Even the most sophisticated tools can go unnoticed without clear entry points. 
-               I learned that designing features is only half the battle. Effective promotion and discovery mechanisms are equally essential to maximize impact.</p>
-             </div>
-             <div>
-               <strong>Importance of Contextual, Non-intrusive Prompts:</strong>
-               <p className="mt-4">The in-app nudges needed to be informative but not disruptive. Balancing user education with workflow 
-               sensitivity was a fine line, teaching me to consider timing, placement, and frequency in design.</p>
-             </div>
-             <div>
-               <strong>Iterative Testing with Real-Time Data:</strong>
-               <p className="mt-4">Although user testing was initially limited, leveraging post-launch data 
-               gave me insights for rapid adjustments. This experience highlighted the value of being adaptable and responsive to metrics as a form of continuous user feedback.</p>
-             </div>
-             <div>
-               <strong>Collaboration with Cross-functional Teams:</strong>
-               <p className="mt-4">Partnering with marketing, product, and engineering allowed us to align on 
-               strategies for raising awareness. This project reinforced the impact of multidisciplinary collaboration to address complex challenges.</p>
-             </div>
-           </div>
-         </section> */}
-         
-        
        </main>
 
         {/* Next Project Section */}

@@ -53,22 +53,22 @@ const FrameworkSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">The discovery system</h2>
         </div>
 
-        {/* 3-Stage Discovery System Table */}
+        {/* Discovery system table */}
         <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
           <div>
             <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8">
-              I designed a 3 stage discovery system that meets users at different points in their journey while using Acrobat:
+              I designed a staged discovery system that meets users at different points in their journey while using Acrobat:
             </p>
             
-            {/* 3-Stage Discovery System - Clean Visual */}
+            {/* Staged discovery system - Clean Visual */}
             <div ref={infographicRef} className="py-10 md:py-16 mb-6 md:mb-8">
               <div className="grid grid-cols-3 w-full">
-                {/* Stage 1 */}
+                {/* Awareness stage */}
                 <div className="flex flex-col items-center">
                   <div className="flex items-center w-full mb-8">
                     <div className="flex-1 h-[1px]"></div>
                     <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-gray-100 to-gray-50 backdrop-blur-md border border-gray-200 shadow-sm flex items-center justify-center text-sm md:text-base font-semibold text-gray-700 flex-shrink-0 mx-4 transition-all duration-500 ease-out ${animationStage >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
-                      01
+                      A
                     </div>
                     <div className={`flex-1 h-[1px] bg-gray-200 transition-all duration-300 origin-left ${animationStage >= 2 ? 'scale-x-100' : 'scale-x-0'}`}></div>
                   </div>
@@ -78,12 +78,12 @@ const FrameworkSection = () => {
                   </div>
                 </div>
                 
-                {/* Stage 2 */}
+                {/* Understanding stage */}
                 <div className="flex flex-col items-center">
                   <div className="flex items-center w-full mb-8">
                     <div className={`flex-1 h-[1px] bg-gray-200 transition-all duration-300 origin-right ${animationStage >= 2 ? 'scale-x-100' : 'scale-x-0'}`}></div>
                     <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-gray-100 to-gray-50 backdrop-blur-md border border-gray-200 shadow-sm flex items-center justify-center text-sm md:text-base font-semibold text-gray-700 flex-shrink-0 mx-4 transition-all duration-500 ease-out ${animationStage >= 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
-                      02
+                      U
                     </div>
                     <div className={`flex-1 h-[1px] bg-gray-200 transition-all duration-300 origin-left ${animationStage >= 3 ? 'scale-x-100' : 'scale-x-0'}`}></div>
                   </div>
@@ -93,12 +93,12 @@ const FrameworkSection = () => {
                   </div>
                 </div>
                 
-                {/* Stage 3 */}
+                {/* Activation stage */}
                 <div className="flex flex-col items-center">
                   <div className="flex items-center w-full mb-8">
                     <div className={`flex-1 h-[1px] bg-gray-200 transition-all duration-300 origin-right ${animationStage >= 3 ? 'scale-x-100' : 'scale-x-0'}`}></div>
                     <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-gray-100 to-gray-50 backdrop-blur-md border border-gray-200 shadow-sm flex items-center justify-center text-sm md:text-base font-semibold text-gray-700 flex-shrink-0 mx-4 transition-all duration-500 ease-out ${animationStage >= 3 ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
-                      03
+                      Act
                     </div>
                     <div className="flex-1 h-[1px]"></div>
                   </div>
@@ -112,7 +112,7 @@ const FrameworkSection = () => {
 
             <div className="pt-8 md:pt-4  border-gray-200/50">
               <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl">
-                Traditional discovery assumes linear adoption where the feature is announced first and the user tries it. Research shows that users need multiple exposures across different contexts before they internalize a new capability. Each stage builds on the last. <span className="text-gray-900 font-medium">Awareness</span> creates familiarity. <span className="text-gray-900 font-medium">Understanding</span> creates intent. <span className="text-gray-900 font-medium">Activation</span> creates habit.
+                Traditional discovery assumes linear adoption where the feature is announced up front and the user tries it. Research shows that users need repeated exposure across different contexts before they internalize a new capability. Each stage builds on the last. <span className="text-gray-900 font-medium">Awareness</span> creates familiarity. <span className="text-gray-900 font-medium">Understanding</span> creates intent. <span className="text-gray-900 font-medium">Activation</span> creates habit.
               </p>
             </div>
 
@@ -125,7 +125,7 @@ const FrameworkSection = () => {
         </div>
 
         <div className="space-y-8 md:space-y-12">
-          {/* Feature 1: Push Notifications */}
+          {/* Push notifications */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
@@ -134,7 +134,7 @@ const FrameworkSection = () => {
                   <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-900">Push notifications</h3>
                   <div className="space-y-4">
                     <p className="text-base md:text-lg text-gray-600">
-                      Push notifications were risky. One wrong message and users would feel spammed. I collaborated with our Content Strategist and Product Marketing Manager to A/B test 3 message frames:
+                      Push notifications were risky. A poorly timed message and users would feel spammed. I collaborated with our Content Strategist and Product Marketing Manager to test distinct message frames:
                     </p>
                     <ul className="space-y-2 text-base md:text-lg text-gray-600 pl-4">
                       <li><span className="font-medium">Version A:</span> "Chat with your docs" (feature focused)</li>
@@ -164,7 +164,7 @@ const FrameworkSection = () => {
             </div>
           </div>
 
-          {/* Feature 2: Value Proposition */}
+          {/* Value proposition */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
@@ -176,8 +176,8 @@ const FrameworkSection = () => {
                       Users who tapped the notification needed to understand what AI Assistant does fast, or they'd leave. Instead of describing features, I designed a splash screen that shows, not tells:
                     </p>
                     <ul className="space-y-2 text-base md:text-lg text-gray-600 pl-4">
-                      <li>The top 3 use cases</li>
-                      <li>A quick 7-second video of AI in action</li>
+                      <li>The highest-value use cases</li>
+                      <li>A quick video of AI in action</li>
                       <li>An immediate "Try now" CTA</li>
                     </ul>
                   </div>
@@ -219,7 +219,7 @@ const FrameworkSection = () => {
                     </div>
                     <div>
                       <h3 className="font-medium mb-2 text-gray-900">Solution</h3>
-                      <p className="text-sm md:text-base text-gray-600">"Try now" routes directly to AI Assistant with 3 recent files already loaded in the chat. Users can start asking questions immediately.</p>
+                      <p className="text-sm md:text-base text-gray-600">"Try now" routes directly to AI Assistant with recent files already loaded in the chat. Users can start asking questions immediately.</p>
                     </div>
                     <div>
                       <h3 className="font-medium mb-2 text-gray-900">Why this worked</h3>
@@ -240,7 +240,7 @@ const FrameworkSection = () => {
                 <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold mb-2">
                   <span className="text-lg md:text-xl font-medium mb-2 text-gray-900">UI evolution</span>
                 </h4>
-                <p className="mb-4 md:mb-8 text-sm md:text-base text-gray-600">I worked with the Gen AI design team (bi-weekly critiques) and motion designers to iterate on the splash screen. In version 1, it felt more like a feature list with static image. In version 2, the video was more for a single use case. In the final version, I collaborated with the motion team to incorporate 3 use cases and simplified the UI to have just one primary CTA. </p>
+                <p className="mb-4 md:mb-8 text-sm md:text-base text-gray-600">I worked with the Gen AI design team through recurring critiques and partnered with motion designers to iterate on the splash screen. Early versions felt more like feature lists or overly narrow demos. In the final version, I collaborated with the motion team to show the broader value of AI Assistant and simplified the UI around a primary CTA. </p>
                 <img 
                   src="SplashUI.png" 
                   alt="Description" 
@@ -250,7 +250,7 @@ const FrameworkSection = () => {
             </div>
           </div>
 
-          {/* Feature 3: In-app Nudges */}
+          {/* Contextual nudges */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
@@ -262,7 +262,7 @@ const FrameworkSection = () => {
                       Splash screens create awareness but not habits. Instead of generic "Try AI" messages, I designed nudges that appear based on user behavior:
                     </p>
                     <ul className="space-y-2 text-base md:text-lg text-gray-600 pl-4">
-                      <li>Opens document longer than 20 pages → "Summarize this document?"</li>
+                      <li>Opens a long document → "Summarize this document?"</li>
                       <li>Scrolls to the end of the document → "Want a summary of what you just read?"</li>
                     </ul>
                   </div>
@@ -320,7 +320,7 @@ const FrameworkSection = () => {
               </div>
             </div>
 
-          {/* Feature 4: Text Contextualization */}
+          {/* Text contextualization */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
@@ -354,7 +354,7 @@ const FrameworkSection = () => {
             </div>
           </div>
 
-          {/* Feature 5: Cold Start Solution */}
+          {/* Cold start solution */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
@@ -363,7 +363,7 @@ const FrameworkSection = () => {
                   <h3 className="text-xl md:text-2xl font-medium mb-4 text-gray-900">Cold start solution</h3>
                   <div className="space-y-4">
                     <p className="text-base md:text-lg text-gray-600">
-                      Users who opened AI Assistant with no specific task faced a blank chat and left. Research revealed "I don't know what to ask" was the #1 barrier. I designed AI Quick Prompts as actionable starting points, organized into three categories:
+                      Users who opened AI Assistant with no specific task faced a blank chat and left. Research revealed "I don't know what to ask" was the biggest barrier. I designed AI Quick Prompts as actionable starting points, organized into clear task categories:
                     </p>
                     <div className="space-y-3 mt-5">
                       <div className="flex items-start gap-3 pl-4 border-l-2 border-gray-400">
@@ -377,7 +377,7 @@ const FrameworkSection = () => {
                         <div>
                           <span className="text-sm font-semibold text-gray-900">Analyze</span>
                           <span className="text-sm text-gray-400 mx-2">·</span>
-                          <span className="text-sm text-gray-500 italic">"Compare section 3 vs 7"</span>
+                          <span className="text-sm text-gray-500 italic">"Compare these sections"</span>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 pl-4 border-l-2 border-gray-200">
@@ -421,11 +421,11 @@ const FrameworkSection = () => {
                 </div>
                 <div>
                   <h3 className="font-medium mb-2 text-gray-900">Solution</h3>
-                  <p className="text-sm md:text-base text-gray-600">Grouping into Ask, Analyze, Create reduced cognitive load. Users identify the task type first, then pick a specific prompt.</p>
+                  <p className="text-sm md:text-base text-gray-600">Grouping into Ask, Analyze, Create reduced cognitive load. Users identify the task type, then pick a specific prompt.</p>
                 </div>
                 <div>
                   <h3 className="font-medium mb-2 text-gray-900">Impact</h3>
-                  <p className="text-sm md:text-base text-gray-600">4% increase in first-session engagement. Users who used Quick Prompts were more likely to return and type their own.</p>
+                  <p className="text-sm md:text-base text-gray-600">Increased early-session engagement. Users who used Quick Prompts were more likely to return and type their own.</p>
                 </div>
               </div>
             </div>

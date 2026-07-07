@@ -32,7 +32,7 @@ const ChallengesGoalsSection = () => {
           <div className="space-y-4 md:space-y-8">
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
               <p className="text-base sm:text-lg text-gray-600">
-                We launched Acrobat's AI Assistant in May 2024 with capabilities that could revolutionize how users interact with PDFs: instant summarization, intelligent Q&A, citation extraction. But 6 weeks post-launch, adoption remained critically low.
+                We brought Acrobat's AI Assistant to mobile to help people summarize PDFs, ask questions, and find information faster. But after launch, adoption remained critically low.
               </p>
             </div>
           </div>
@@ -48,15 +48,15 @@ const ChallengesGoalsSection = () => {
           </div>
 
           <div className="space-y-6 md:space-y-8">
-            {/* Insight 1 */}
+            {/* Awareness gap */}
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Awareness gap</h3>
               <p className="text-base sm:text-lg text-gray-600">
-                90% of users didn't know the AI Assistant existed. Adoption was critically low and the existing entry point (the FAB) was not discoverable.
+                Most users still didn't know AI Assistant was there. The existing entry point (the FAB) was easy to miss, so many users never discovered it.
               </p>
             </div>
 
-            {/* Insight 2 */}
+            {/* Mental model problems */}
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Mental model problems</h3>
               <p className="text-base sm:text-lg text-gray-600">
@@ -64,7 +64,7 @@ const ChallengesGoalsSection = () => {
               </p>
             </div>
 
-            {/* Insight 3 */}
+            {/* Notification fatigue */}
             <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">Notification fatigue</h3>
               <p className="text-base sm:text-lg text-gray-600">

@@ -141,17 +141,6 @@ const SezzleUp = () => {
                     <p className="text-base sm:text-lg text-gray-600 max-w-[180px]">Increase in enrollment completion</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-8 md:gap-12 mt-6 md:mt-8">
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">4.8</h3>
-                    <p className="text-base sm:text-lg text-gray-600 max-w-[180px]">App Store rating post-launch</p>
-                  </div>
-                  <div className="w-px bg-gray-200 self-stretch min-h-[80px]"></div>
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-2">80</h3>
-                    <p className="text-base sm:text-lg text-gray-600 max-w-[180px]">NPS score (up from 70)</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -598,106 +587,39 @@ const SezzleUp = () => {
         </section>
 
         {/* Results Section */}
-        <section className="mb-12 md:mb-16 mt-2">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Impact</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Results</h2>
+        <section className="relative pt-10 pb-20 md:pt-14 md:pb-24">
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out space-y-5">
+            <h2 className="max-w-3xl text-base sm:text-lg font-medium leading-relaxed text-gray-950">Results</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-            {/* Result 1 - Dark */}
-            <motion.div 
-              className="relative bg-gray-950 p-6 md:p-8 rounded-2xl md:rounded-3xl min-h-[280px] md:min-h-[320px] flex flex-col justify-between"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <div>
-                <span className="text-2xl md:text-3xl font-light text-white/80 mb-3 block">70%</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">Increase in bank account connections</h3>
-              </div>
-              <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                Users opted for direct bank payments, reducing Sezzle's processing costs. Credit card fees ~3% vs. ACH ~0.5%.
-              </p>
-            </motion.div>
-
-            {/* Result 2 - Light */}
-            <motion.div 
-              className="relative bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-200 min-h-[280px] md:min-h-[320px] flex flex-col justify-between"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <div>
-                <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">22%</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">Increase in enrollment completion</h3>
-              </div>
-              <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-                Progressive disclosure reduced perceived complexity. Rage clicks on checklist labels dropped to near zero, and post-launch satisfaction scores increased by 22%.
-              </p>
-            </motion.div>
-
-            {/* Result 3 - Dark */}
-            <motion.div 
-              className="relative bg-gray-950 p-6 md:p-8 rounded-2xl md:rounded-3xl min-h-[280px] md:min-h-[320px] flex flex-col justify-between"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <div>
-                <span className="text-2xl md:text-3xl font-light text-white/80 mb-3 block">4.8</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">App Store rating post-launch</h3>
-              </div>
-              <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                Users praised the clarity of the enrollment flow and transparency around credit reporting.
-              </p>
-            </motion.div>
-
-            {/* Result 4 - Light */}
-            <motion.div 
-              className="relative bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl border border-gray-200 min-h-[280px] md:min-h-[320px] flex flex-col justify-between"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <div>
-                <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">70 → 80</span>
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 leading-tight">NPS score improvement</h3>
-              </div>
-              <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-                10-point increase in Net Promoter Score after Sezzle Up launch. Measured via in-app survey 30 days post-enrollment.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Additional Sezzle Growth Work */}
-        <section className="mb-16 md:mb-24">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-10">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Additional impact</p>
-            <h2 className="text-xl sm:text-2xl font-medium text-gray-900">Growth work beyond Sezzle Up</h2>
-          </div>
-
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border-t border-gray-200 pt-6">
-              <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">#143 → #64</span>
-              <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-3">App Store Optimization</h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                Identified critical UX issues through usability testing and NPS analysis. Design improvements contributed to an App Store ranking jump from #143 to #64 in Finance within 3 weeks.
-              </p>
-            </div>
-
-            <div className="border-t border-gray-200 pt-6">
-              <span className="text-2xl md:text-3xl font-light text-gray-400 mb-3 block">40+</span>
-              <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-3">0→1 Affiliate Program</h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                Designed the growth strategy for a new affiliate platform, aligned requirements across VPs, Engineering, and Customer Support, and delivered an MVP that launched with 40+ affiliates and increased revenue.
-              </p>
-            </div>
+          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-10 border-t border-gray-200">
+            {[
+              {
+                metric: '70%',
+                title: 'Increase in bank account connections',
+                body: "Users opted for direct bank payments, reducing Sezzle's processing costs. Credit card fees ~3% vs. ACH ~0.5%."
+              },
+              {
+                metric: '22%',
+                title: 'Increase in enrollment completion',
+                body: 'Progressive disclosure reduced perceived complexity. Rage clicks on checklist labels dropped to near zero, and post-launch satisfaction scores increased by 22%.'
+              }
+            ].map((result) => (
+              <motion.div
+                key={result.title}
+                className="grid grid-cols-1 gap-3 border-b border-gray-200 py-6 md:grid-cols-[220px_1fr] md:gap-8 md:py-8"
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, amount: 0.16 }}
+              >
+                <span className="whitespace-nowrap text-2xl sm:text-3xl font-normal leading-tight text-gray-400">{result.metric}</span>
+                <div className="max-w-3xl space-y-3">
+                  <h3 className="text-xl md:text-2xl font-medium text-gray-900">{result.title}</h3>
+                  <p className="text-base md:text-lg leading-relaxed text-gray-600">{result.body}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
 
