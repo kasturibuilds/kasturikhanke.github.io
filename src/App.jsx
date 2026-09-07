@@ -15,7 +15,7 @@ import AppRoutes from './AppRoutes';
 import Feedback from './Feedback';
 import { FaPause, FaPlay } from 'react-icons/fa';
 import About from './About'; // Add this import at the top with other imports
-import { motion } from 'framer-motion'; // Add this import at the top
+import { motion, useReducedMotion } from 'framer-motion'; // Add this import at the top
 
 const DEFAULT_HERO_TEXT = "collaboration.";
 
@@ -31,7 +31,14 @@ const HERO_TEXT_MAP = {
   "Credit reporting": "trust."
 };
 
+const HERO_IMAGE_ALT_MAP = {
+  "PDF Spaces": "PDF Spaces mobile collaboration interface",
+  "AI Assistant Discovery": "Acrobat AI Assistant discovery experience",
+  "Credit reporting": "Sezzle Up credit reporting experience"
+};
+
 const App = () => {
+  const prefersReducedMotion = useReducedMotion();
   // Check if coming from case study page
   const urlParams = new URLSearchParams(window.location.search);
   const fromCaseStudy = urlParams.get('fromCaseStudy') === 'true';
@@ -196,7 +203,7 @@ const App = () => {
 
   // Modify the existing image rotation useEffect
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || prefersReducedMotion) return;
 
     const interval = setInterval(async () => {
       const imageKeys = Object.keys(IMAGE_MAP);
@@ -232,7 +239,7 @@ const App = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [selectedImage, isPaused]);
+  }, [selectedImage, isPaused, prefersReducedMotion]);
 
   const handleImageClick = (text) => {
     ++heroTransitionIdRef.current;
@@ -252,13 +259,13 @@ const App = () => {
     if (page === 'home') {
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
       });
     } else if (section) {
       const sectionTop = section.offsetTop;
       window.scrollTo({
         top: sectionTop,
-        behavior: 'smooth'
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
       });
     }
   };
@@ -486,7 +493,7 @@ const App = () => {
                     <div className="hero-image-container relative w-full flex items-center justify-center" style={{ minHeight: 'inherit' }}>
                       <img 
                         src={currentImage}
-                        alt="Profile"
+                        alt={HERO_IMAGE_ALT_MAP[selectedImage]}
                         className="block w-full max-w-[280px] sm:max-w-[360px] md:max-w-full md:max-h-[70vh] object-contain mx-auto md:animate-float"
                         style={{
                           transition: 'all 0.4s ease-in-out',
@@ -511,19 +518,21 @@ const App = () => {
                     className="hidden md:flex flex-col justify-center space-y-4 w-[20%] z-10"
                   >
                     {Object.keys(IMAGE_MAP).map((text) => (
-                      <div
+                      <button
+                        type="button"
                         key={text}
-                        className={`text-sm whitespace-nowrap font-medium cursor-pointer transition-all duration-500 ease-in-out ${
+                        aria-pressed={selectedImage === text}
+                        className={`rounded-sm text-left text-sm whitespace-nowrap font-medium transition-all duration-500 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-4 ${
                           selectedImage === text 
                             ? 'text-indigo-600 opacity-100 translate-x-2' 
-                            : 'text-gray-900 hover:text-gray-600 opacity-50'
+                            : 'text-gray-500 hover:text-gray-900'
                         }`}
                         onClick={() => handleImageClick(text)}
                       >
                         {text}
-                      </div>
+                      </button>
                     ))}
-                    <div className="flex justify-start mt-2">
+                    {!prefersReducedMotion && <div className="flex justify-start mt-2">
                       <button
                         onClick={() => setIsPaused(!isPaused)}
                         className="p-2 text-gray-900 opacity-50 hover:text-gray-600 hover:opacity-50 active:text-indigo-600 active:opacity-100 transition-colors"
@@ -531,7 +540,7 @@ const App = () => {
                       >
                         {isPaused ? <FaPlay size={16} /> : <FaPause size={16} />}
                       </button>
-                    </div>
+                    </div>}
                   </motion.div>
 
                   {/* Mobile navigation for image selection */}
@@ -548,6 +557,8 @@ const App = () => {
                       {Object.keys(IMAGE_MAP).map((text) => (
                         <button
                           key={text}
+                          type="button"
+                          aria-pressed={selectedImage === text}
                           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
                             selectedImage === text 
                               ? 'text-indigo-600 bg-indigo-50 border border-indigo-200' 
@@ -558,13 +569,14 @@ const App = () => {
                           {text}
                         </button>
                       ))}
-                      <button
+                      {!prefersReducedMotion && <button
+                        type="button"
                         onClick={() => setIsPaused(!isPaused)}
                         className="px-3 py-1.5 rounded-full text-xs font-medium text-gray-600 bg-gray-50 border border-gray-200 transition-colors"
                         aria-label={isPaused ? "Resume rotation" : "Pause rotation"}
                       >
                         {isPaused ? <FaPlay size={12} /> : <FaPause size={12} />}
-                      </button>
+                      </button>}
                     </div>
                   </motion.div>
                 </div>
