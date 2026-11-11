@@ -18,6 +18,8 @@
     "express-rate-limit": "^7.4.1",
     "express-session": "^1.18.1",
     "framer-motion": "^11.18.2",
+    "generative-charts": "^0.2.0",
+    "generative-loaders": "^0.1.1",
     "gsap": "^3.12.5",
     "helmet": "^8.0.0",
     "react": "^18.3.1",

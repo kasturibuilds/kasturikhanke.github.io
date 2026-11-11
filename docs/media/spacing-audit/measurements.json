@@ -1,0 +1,212 @@
+[
+  {
+    "name": "The OpenAI film",
+    "blockGap": "normal",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [],
+    "sheetMargin": "4px",
+    "width": 1280
+  },
+  {
+    "name": "Generative Loaders",
+    "blockGap": "4px",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [],
+    "sheetMargin": "4px",
+    "width": 1280
+  },
+  {
+    "name": "Generative Charts",
+    "blockGap": "4px",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [],
+    "sheetMargin": "4px",
+    "width": 1280
+  },
+  {
+    "name": "Adobe AI Assistant",
+    "blockGap": "normal",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      }
+    ],
+    "sheetMargin": "4px",
+    "width": 1280
+  },
+  {
+    "name": "PDF Spaces",
+    "blockGap": "normal",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      }
+    ],
+    "sheetMargin": "4px",
+    "width": 1280
+  },
+  {
+    "name": "Sezzle Up",
+    "blockGap": "normal",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      },
+      {
+        "bottom": "48px",
+        "top": "48px"
+      }
+    ],
+    "sheetMargin": "4px",
+    "width": 1280
+  },
+  {
+    "name": "The OpenAI film",
+    "blockGap": "normal",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [],
+    "sheetMargin": "4px",
+    "width": 390
+  },
+  {
+    "name": "Generative Loaders",
+    "blockGap": "4px",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [],
+    "sheetMargin": "4px",
+    "width": 390
+  },
+  {
+    "name": "Generative Charts",
+    "blockGap": "4px",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [],
+    "sheetMargin": "4px",
+    "width": 390
+  },
+  {
+    "name": "Adobe AI Assistant",
+    "blockGap": "normal",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      }
+    ],
+    "sheetMargin": "4px",
+    "width": 390
+  },
+  {
+    "name": "PDF Spaces",
+    "blockGap": "normal",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      }
+    ],
+    "sheetMargin": "4px",
+    "width": 390
+  },
+  {
+    "name": "Sezzle Up",
+    "blockGap": "normal",
+    "chromeGap": "4px",
+    "overflow": false,
+    "sections": [
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      },
+      {
+        "bottom": "32px",
+        "top": "32px"
+      }
+    ],
+    "sheetMargin": "4px",
+    "width": 390
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "preparedOn": "2026-10-05",
+  "status": "Prepared; not generated; reference image upload blocked",
+  "referenceImages": [
+    "website.jpg",
+    "text-loaders.jpg",
+    "inline-loaders.jpg",
+    "image-loaders.jpg"
+  ],
+  "fields": [
+    {
+      "label": "studio-productName",
+      "placeholder": "e.g. Hash Health",
+      "value": "Generative Loaders"
+    },
+    {
+      "label": "studio-description",
+      "placeholder": "What it is, who it's for, and the one thing viewers should remember.",
+      "value": "Generative Loaders is a React library for AI interfaces: 46 animated loading states, including 16 text reveals, 18 inline activity indicators, and 12 image-generation placeholders. Its website currently displays 84K npm downloads (checked October 5, 2026; not unique users). Create a 20-second product film for the dark TV-style frame on the creator’s portfolio. Show the product animations large enough to understand at a small player size. Sequence: 0–3s “Make waiting worth watching.” revealed with Decode/Typewriter; 3–9s hero close-ups of Matrix, Orbit, Signal and an image reveal; 9–13s pull back to a wall of varied loaders, with “46 loaders. Text. Inline. Image.”; 13–16s a concise website selection-and-copy-code moment; 16–20s “84K npm downloads”, Generative Loaders, and generativeloaders.com. Animate the loader shapes and text; make the breadth visible. Use the supplied website screenshots as the visual source. Do not claim a working interaction or capability absent from the references."
+    },
+    {
+      "label": "studio-productUrl",
+      "placeholder": "yourproduct.com",
+      "value": "https://generativeloaders.com"
+    },
+    {
+      "label": "studio-audience",
+      "placeholder": "e.g. indie founders, runners, new parents",
+      "value": "Product designers, React developers, and founders building AI interfaces"
+    },
+    {
+      "label": "",
+      "placeholder": null,
+      "value": "on"
+    },
+    {
+      "label": "studio-notes",
+      "placeholder": "Must-haves, words to avoid, the line it should end on…",
+      "value": "Charcoal #171918, warm white #F2F0EB, muted gray #A4A7A2. Editorial motion design: oversized readable typography, precise easing, one focal idea per beat. Dark full-bleed backgrounds; remove white webpage canvases around isolated UI. No mascots, teal, neon, stock footage, flashing, or thumbnail zoom loops. Product motion is the hero. Keep text and code accurate. Silent-first; no voiceover. End on generativeloaders.com. Match the restrained type-led clarity of BINTEX and dark product staging of Open Sponsor."
+    }
+  ],
+  "form": "Anthropic\nDefault\nChange\nOpus 5.5\nMotion graphics, illustration and kinetic type, written frame by frame by Claude.\nMotion graphics\nAI footage\nProduct images\nOptional\nAdd product images or screenshots\nPNG, JPG or WebP · up to 4 · 8 MB each\nBrief\nProduct name\nProduct type\nDeveloper tool / API\nWhat it does\n1002/1500\nLink · optional\nAudience · optional\nLook\nReference\nCopy a video's style\n103 videos or your own\nStyle\nMotion graphics\nTone\nMinimal\nFunny\nEpic\nCute\nHype\nLuxury\nHeartfelt\nCalm\nBold & loud\nMinimal\nMysterious\nFormat\nPromo spot\nhook, problem, product, payoff, call to action\nPromo spot\nMovie trailer\nExplainer\nLaunch announcement\nFeature spotlight\nBefore / after\nPOV\nComedy skit\nMini drama\nHow-to\nSeamless loop\nOutput\nAspect ratio\n9:16\n16:9\n1:1\n4:5\nDuration\n20s\n10s\n15s\n20s\n30s\nQuality\n1080p\n1080p\n4K\nVoiceover\n+20 credits\nOpus casts an expressive voice and times every beat to its words.\nBrand\nOptional\nColours\nAdd colour\n0/4\nNotes for the director\n512/600"
+}

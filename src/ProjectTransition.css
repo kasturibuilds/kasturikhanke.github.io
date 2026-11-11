@@ -1,0 +1,16 @@
+/* The navigation stays above a viewport-sized sheet; long studies never stretch it. */
+.project-transition {
+  position: fixed;
+  bottom: 0;
+  z-index: 9;
+  overflow: hidden;
+  border-radius: 10px;
+  pointer-events: none;
+}
+.project-transition[hidden] { display: none; }
+.project-transition > div { position: absolute; inset: -10% 0; background: #fcfcfa; }
+@media (prefers-reduced-motion: reduce) { .project-transition { display: none; } }
+
+/* Preserve scroll position and horizontal alignment as project heights change. */
+.workbench { overflow-anchor: none; }
+html:has(.workbench) { scrollbar-gutter: stable; }

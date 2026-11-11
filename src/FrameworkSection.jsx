@@ -1,3 +1,4 @@
+import CaseStudyVideo from './CaseStudyVideo';
 import React, { useEffect, useRef, useState } from 'react';
 
 const FrameworkSection = () => {
@@ -46,8 +47,9 @@ const FrameworkSection = () => {
   }, [animationStage]);
 
   return (
-    <section className="relative py-8 md:py-12">
+    <section className="case-framework relative py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="case-framework-intro" data-chapter="Discovery system">
         <div className="mb-8 md:mb-12">
           <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Framework</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">The discovery system</h2>
@@ -124,7 +126,8 @@ const FrameworkSection = () => {
           </div>
         </div>
 
-        <div className="space-y-8 md:space-y-12">
+        </div>
+        <div className="case-framework-examples space-y-8 md:space-y-12">
           {/* Push notifications */}
           <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
@@ -148,18 +151,18 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <video
+                <CaseStudyVideo
                   className="w-full h-full object-cover rounded-lg"
-                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
-                  src="PN.mov"
+                  src="/PN.mov"
+                  aria-label="AI Assistant notification discovery demo"
                   type="video/quicktime"
-                  preload="auto"
+                  preload="none"
                 >
                   Your browser does not support the video tag.
-                </video>
+                </CaseStudyVideo>
               </div>
             </div>
           </div>
@@ -184,18 +187,18 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <video
+                <CaseStudyVideo
                   className="w-full h-full object-cover rounded-lg"
-                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
-                  src="UA.mov"
+                  src="/UA.mov"
+                  aria-label="AI Assistant onboarding demo"
                   type="video/quicktime"
-                  preload="auto"
+                  preload="none"
                 >
                   Your browser does not support the video tag.
-                </video>
+                </CaseStudyVideo>
               </div>
             </div>
 
@@ -207,7 +210,7 @@ const FrameworkSection = () => {
                       <span className="text-lg md:text-xl font-medium mb-2 text-gray-900">The pivot</span>
                     </h4>
                     <img 
-                      src="BeforeUA.png" 
+                      src="/BeforeUA.png"
                       alt="Description" 
                       className="w-full rounded-lg mt-4 md:mt-8"
                     />
@@ -228,7 +231,7 @@ const FrameworkSection = () => {
                   </div>
                 </div>
                 <img 
-                  src="AfterUA.png" 
+                  src="/AfterUA.png"
                   alt="Description" 
                   className="w-full mt-4 md:mt-8 rounded-lg"
                 />
@@ -242,7 +245,7 @@ const FrameworkSection = () => {
                 </h4>
                 <p className="mb-4 md:mb-8 text-sm md:text-base text-gray-600">I worked with the Gen AI design team through recurring critiques and partnered with motion designers to iterate on the splash screen. Early versions felt more like feature lists or overly narrow demos. In the final version, I collaborated with the motion team to show the broader value of AI Assistant and simplified the UI around a primary CTA. </p>
                 <img 
-                  src="SplashUI.png" 
+                  src="/SplashUI.png"
                   alt="Description" 
                   className="w-full rounded-lg"
                 />
@@ -269,18 +272,18 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <video
+                <CaseStudyVideo
                   className="w-full h-full object-cover rounded-lg"
-                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
-                  src="Chatbubble.mov"
+                  src="/Chatbubble.mov"
+                  aria-label="Contextual AI Assistant prompt demo"
                   type="video/quicktime"
-                  preload="auto"
+                  preload="none"
                 >
                   Your browser does not support the video tag.
-                </video>
+                </CaseStudyVideo>
               </div>
             </div>
           </div>
@@ -291,7 +294,7 @@ const FrameworkSection = () => {
                     <span className="text-lg md:text-xl font-medium mb-2 text-gray-900">Why nudges?</span>
                   </h4>
                   <img
-                    src="Nudges.png"
+                    src="/Nudges.png"
                     alt="Description"
                     className="w-full rounded-lg mt-4 md:mt-8"
                   />
@@ -338,18 +341,18 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <video
+                <CaseStudyVideo
                   className="w-full h-full object-cover rounded-lg shadow-sm"
-                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
-                  src="AskAI.mov"
+                  src="/AskAI.mov"
+                  aria-label="Ask AI from selected text demo"
                   type="video/quicktime"
-                  preload="auto"
+                  preload="none"
                 >
                   Your browser does not support the video tag.
-                </video>
+                </CaseStudyVideo>
               </div>
             </div>
           </div>
@@ -392,18 +395,18 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <video
+                <CaseStudyVideo
                   className="w-full h-full object-cover rounded-lg shadow-sm"
-                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
-                  src="IC.mov"
+                  src="/IC.mov"
+                  aria-label="AI Quick Prompts demo"
                   type="video/quicktime"
-                  preload="auto"
+                  preload="none"
                 >
                   Your browser does not support the video tag.
-                </video>
+                </CaseStudyVideo>
               </div>
             </div>
           </div>
@@ -412,7 +415,7 @@ const FrameworkSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="col-span-1 md:col-span-8">
                 <h4 className="text-lg md:text-xl font-medium mb-2 text-gray-900">Why categories?</h4>
-                <img src="ICfinal.png" alt="Intuitive Categories solution" className="w-full rounded-lg mt-4 md:mt-8" />
+                <img src="/ICfinal.png" alt="Intuitive Categories solution" className="w-full rounded-lg mt-4 md:mt-8" />
               </div>
               <div className="col-span-1 md:col-span-4 space-y-6 md:space-y-8 mt-4 md:mt-8">
                 <div>

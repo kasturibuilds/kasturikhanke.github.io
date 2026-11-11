@@ -1,0 +1,576 @@
+{
+  "source": "https://generativecharts.com/",
+  "capturedAt": "2026-10-08T04:07:49.429Z",
+  "theme": "dark",
+  "width": 3840,
+  "height": 2160,
+  "fps": 60,
+  "duration": 15,
+  "audio": false,
+  "shots": [
+    {
+      "name": "01-site",
+      "start": 0,
+      "duration": 1,
+      "frames": 60,
+      "samples": [
+        {
+          "frame": 9,
+          "file": "01-site-009.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Bar",
+            "chartCount": 5,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Revenue movement"
+            ],
+            "scrollY": 0
+          }
+        },
+        {
+          "frame": 33,
+          "file": "01-site-033.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Bar",
+            "chartCount": 5,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Revenue movement"
+            ],
+            "scrollY": 0
+          }
+        },
+        {
+          "frame": 59,
+          "file": "01-site-059.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Bar",
+            "chartCount": 5,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Revenue movement"
+            ],
+            "scrollY": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "02-bars",
+      "start": 1,
+      "duration": 1.5,
+      "frames": 90,
+      "samples": [
+        {
+          "frame": 13,
+          "file": "02-bars-013.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Bar",
+            "chartCount": 5,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Revenue movement"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 49,
+          "file": "02-bars-049.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Bar",
+            "chartCount": 5,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Revenue movement"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 89,
+          "file": "02-bars-089.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Bar",
+            "chartCount": 5,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Monthly revenue",
+              "Revenue movement"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    },
+    {
+      "name": "03-lines",
+      "start": 2.5,
+      "duration": 1.75,
+      "frames": 105,
+      "samples": [
+        {
+          "frame": 15,
+          "file": "03-lines-015.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Line",
+            "chartCount": 4,
+            "chartTitles": [
+              "Revenue momentum",
+              "Revenue momentum",
+              "Revenue momentum",
+              "Revenue momentum"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 57,
+          "file": "03-lines-057.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Line",
+            "chartCount": 4,
+            "chartTitles": [
+              "Revenue momentum",
+              "Revenue momentum",
+              "Revenue momentum",
+              "Revenue momentum"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 104,
+          "file": "03-lines-104.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Line",
+            "chartCount": 4,
+            "chartTitles": [
+              "Revenue momentum",
+              "Revenue momentum",
+              "Revenue momentum",
+              "Revenue momentum"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    },
+    {
+      "name": "04-areas",
+      "start": 4.25,
+      "duration": 1.5,
+      "frames": 90,
+      "samples": [
+        {
+          "frame": 13,
+          "file": "04-areas-013.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "Area",
+            "chartCount": 3,
+            "chartTitles": [
+              "Revenue over time",
+              "Revenue over time",
+              "Revenue over time"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 49,
+          "file": "04-areas-049.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "Area",
+            "chartCount": 3,
+            "chartTitles": [
+              "Revenue over time",
+              "Revenue over time",
+              "Revenue over time"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 89,
+          "file": "04-areas-089.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "Area",
+            "chartCount": 3,
+            "chartTitles": [
+              "Revenue over time",
+              "Revenue over time",
+              "Revenue over time"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    },
+    {
+      "name": "05-pie",
+      "start": 5.75,
+      "duration": 1.75,
+      "frames": 105,
+      "samples": [
+        {
+          "frame": 15,
+          "file": "05-pie-015.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Pie",
+            "chartCount": 3,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Launch signal by segment",
+              "Launch signal by segment"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 57,
+          "file": "05-pie-057.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Pie",
+            "chartCount": 3,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Launch signal by segment",
+              "Launch signal by segment"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 104,
+          "file": "05-pie-104.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Pie",
+            "chartCount": 3,
+            "chartTitles": [
+              "Launch signal by segment",
+              "Launch signal by segment",
+              "Launch signal by segment"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    },
+    {
+      "name": "06-heatmaps",
+      "start": 7.5,
+      "duration": 1.5,
+      "frames": 90,
+      "samples": [
+        {
+          "frame": 13,
+          "file": "06-heatmaps-013.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Heatmap",
+            "chartCount": 3,
+            "chartTitles": [
+              "Weekly activity",
+              "Weekly activity",
+              "Weekly activity"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 49,
+          "file": "06-heatmaps-049.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Heatmap",
+            "chartCount": 3,
+            "chartTitles": [
+              "Weekly activity",
+              "Weekly activity",
+              "Weekly activity"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 89,
+          "file": "06-heatmaps-089.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Heatmap",
+            "chartCount": 3,
+            "chartTitles": [
+              "Weekly activity",
+              "Weekly activity",
+              "Weekly activity"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    },
+    {
+      "name": "07-terrain",
+      "start": 9,
+      "duration": 1.75,
+      "frames": 105,
+      "samples": [
+        {
+          "frame": 15,
+          "file": "07-terrain-015.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "3D terrain",
+            "chartCount": 2,
+            "chartTitles": [
+              "Signal terrain",
+              "Signal terrain"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 57,
+          "file": "07-terrain-057.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "3D terrain",
+            "chartCount": 2,
+            "chartTitles": [
+              "Signal terrain",
+              "Signal terrain"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 104,
+          "file": "07-terrain-104.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "3D terrain",
+            "chartCount": 2,
+            "chartTitles": [
+              "Signal terrain",
+              "Signal terrain"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    },
+    {
+      "name": "08-radial",
+      "start": 10.75,
+      "duration": 1.25,
+      "frames": 75,
+      "samples": [
+        {
+          "frame": 11,
+          "file": "08-radial-011.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Radial",
+            "chartCount": 3,
+            "chartTitles": [
+              "Goal completion",
+              "Goal completion",
+              "Goal completion"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 41,
+          "file": "08-radial-041.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Radial",
+            "chartCount": 3,
+            "chartTitles": [
+              "Goal completion",
+              "Goal completion",
+              "Goal completion"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 74,
+          "file": "08-radial-074.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "neon-instruments",
+            "family": "Radial",
+            "chartCount": 3,
+            "chartTitles": [
+              "Goal completion",
+              "Goal completion",
+              "Goal completion"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    },
+    {
+      "name": "09-radar",
+      "start": 12,
+      "duration": 1.5,
+      "frames": 90,
+      "samples": [
+        {
+          "frame": 13,
+          "file": "09-radar-013.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Radar",
+            "chartCount": 2,
+            "chartTitles": [
+              "Product profile",
+              "Product profile"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 49,
+          "file": "09-radar-049.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Radar",
+            "chartCount": 2,
+            "chartTitles": [
+              "Product profile",
+              "Product profile"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 89,
+          "file": "09-radar-089.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "mono-editorial",
+            "family": "Radar",
+            "chartCount": 2,
+            "chartTitles": [
+              "Product profile",
+              "Product profile"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    },
+    {
+      "name": "10-sankey",
+      "start": 13.5,
+      "duration": 1.5,
+      "frames": 90,
+      "samples": [
+        {
+          "frame": 13,
+          "file": "10-sankey-013.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "Sankey",
+            "chartCount": 1,
+            "chartTitles": [
+              "Visitor flow"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 49,
+          "file": "10-sankey-049.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "Sankey",
+            "chartCount": 1,
+            "chartTitles": [
+              "Visitor flow"
+            ],
+            "scrollY": 235
+          }
+        },
+        {
+          "frame": 89,
+          "file": "10-sankey-089.png",
+          "state": {
+            "mode": "dark",
+            "chartTheme": "airform",
+            "family": "Sankey",
+            "chartCount": 1,
+            "chartTitles": [
+              "Visitor flow"
+            ],
+            "scrollY": 235
+          }
+        }
+      ]
+    }
+  ],
+  "pageErrors": []
+}

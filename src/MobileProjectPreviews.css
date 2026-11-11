@@ -1,0 +1,9 @@
+.corner-player .player-slide .project-image .photographic-project-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+  transition: none;
+  pointer-events: none;
+}

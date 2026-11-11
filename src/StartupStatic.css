@@ -1,0 +1,123 @@
+.startup-static {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.startup-static-veil {
+  position: absolute;
+  inset: 0;
+  background: rgb(5 9 7 / 45%);
+  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
+}
+
+.startup-static-grain {
+  position: absolute;
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+  display: block;
+  opacity: .28;
+  animation: startup-grain-drift 240ms steps(1) infinite;
+}
+
+.startup-static[data-resolving="true"] .startup-static-veil {
+  animation: startup-focus 1.6s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.startup-static[data-resolving="true"] .startup-static-grain {
+  animation: startup-grain-drift 240ms steps(1) infinite, startup-static-clear 1150ms ease-out both;
+}
+
+.startup-static::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / 18%) 3px 4px);
+  opacity: .45;
+}
+
+.startup-static[data-resolving="true"]::after {
+  animation: startup-scanlines-clear 1.4s ease-out both;
+}
+
+/* Shift the page with the signal, then land precisely on its final layout. */
+@media (prefers-reduced-motion: no-preference) {
+  body:has(.startup-static) { overflow-x: clip; }
+
+  .startup-static ~ * {
+    translate: -14px 10px;
+  }
+
+  .startup-static[data-resolving="true"] ~ * {
+    animation: startup-diagonal-settle 1.6s cubic-bezier(.22, .61, .36, 1) both;
+  }
+
+  .startup-static ~ * .receiver-group {
+    filter: blur(12px);
+    opacity: .35;
+    translate: 0 18px;
+  }
+
+  .startup-static ~ * .page-corner {
+    filter: blur(10px);
+    opacity: 0;
+    translate: -4px 12px;
+  }
+
+  .startup-static[data-resolving="true"] ~ * .receiver-group {
+    animation: startup-receiver-reveal 1.4s cubic-bezier(.22, .61, .36, 1) both;
+  }
+
+  .startup-static[data-resolving="true"] ~ * .page-corner {
+    animation: startup-caption-reveal 1.2s cubic-bezier(.22, .61, .36, 1) 200ms both;
+  }
+
+  .startup-static[data-resolving="true"] ~ * .corner-about { animation-delay: 280ms; }
+  .startup-static[data-resolving="true"] ~ * .corner-pricing { animation-delay: 360ms; }
+  .startup-static[data-resolving="true"] ~ * .corner-contact { animation-delay: 440ms; }
+}
+
+@keyframes startup-receiver-reveal {
+  from { filter: blur(12px); opacity: .35; translate: 0 18px; }
+  to { filter: blur(0); opacity: 1; translate: 0 0; }
+}
+
+@keyframes startup-caption-reveal {
+  from { filter: blur(10px); opacity: 0; translate: -4px 12px; }
+  to { filter: blur(0); opacity: 1; translate: 0 0; }
+}
+
+@keyframes startup-scanlines-clear {
+  from { opacity: .45; }
+  to { opacity: 0; }
+}
+
+@keyframes startup-diagonal-settle {
+  from { translate: -14px 10px; }
+  to { translate: 0 0; }
+}
+
+@keyframes startup-focus {
+  from { -webkit-backdrop-filter: blur(32px); backdrop-filter: blur(32px); background: rgb(5 9 7 / 45%); }
+  to { -webkit-backdrop-filter: blur(0); backdrop-filter: blur(0); background: transparent; }
+}
+
+@keyframes startup-static-clear {
+  from { opacity: .28; }
+  100% { opacity: 0; }
+}
+
+@keyframes startup-grain-drift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-3%, 2%); }
+  50% { transform: translate(2%, -3%); }
+  75% { transform: translate(-2%, -1%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .startup-static { display: none; animation: none; }
+}

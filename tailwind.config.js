@@ -62,6 +62,7 @@ export default {
         }
       },
       fontFamily: {
+        sans: ['"Public Sans"', 'Arial', 'Helvetica', 'sans-serif'],
         'emoji': [
           'Apple Color Emoji',
           'Segoe UI Emoji',

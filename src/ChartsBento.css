@@ -1,0 +1,29 @@
+.charts-comparison-toolbar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
+.charts-comparison-toolbar > p, .charts-demo-caption { margin:0; color:#62625c; font-size:13px; line-height:1.6; }
+.charts-options { display:flex; flex-wrap:wrap; gap:4px; }
+.charts-options button { min-height:44px; padding:9px 14px; border:1px solid transparent; border-radius:7px; background:transparent; color:#62625c; font-size:13px; line-height:1.4; }
+.charts-options button[aria-pressed="true"] { color:#262626; background:#efefec; }
+.charts-options button:hover { color:#262626; background:#f5f5f2; }
+.charts-options button:focus-visible { outline:2px solid #262626; outline-offset:3px; }
+.charts-theme-comparison { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; align-items:start; }
+.charts-theme-comparison figure { min-width:0; margin:0; }
+.charts-theme-comparison figcaption { padding:20px 2px 0; }
+.charts-theme-comparison h3 { margin:0 0 6px; color:#262626; font-size:17px; line-height:1.4; font-weight:500; }
+.charts-figure-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; }
+.charts-integrity-demo > .charts-options { margin-bottom:16px; }
+.charts-demo-caption { margin-top:16px; }
+/* Charts own their figure surface; the portfolio supplies only spacing. */
+.charts-bento .ck-chart { box-shadow:none; }
+@media(max-width:900px) {
+ .charts-theme-comparison { grid-template-columns:minmax(0,1fr); gap:28px; }
+ .charts-theme-comparison figure { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); align-items:center; gap:24px; }
+ .charts-theme-comparison figcaption { padding:0; }
+}
+@media(max-width:700px) {
+ .charts-comparison-toolbar { align-items:flex-start; }
+ .charts-comparison-toolbar > p { max-width:150px; }
+ .charts-theme-comparison figure { display:block; }
+ .charts-theme-comparison figcaption { padding:16px 0 0; }
+ .charts-figure-pair { grid-template-columns:minmax(0,1fr); }
+ .charts-options button { padding:9px 11px; }
+}

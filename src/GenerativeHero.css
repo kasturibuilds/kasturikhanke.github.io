@@ -1,0 +1,30 @@
+.generative-hero { position: relative; min-height: clamp(430px, 56svh, 590px); margin: 4px 0; overflow: hidden; background: #100f12; color: #eeeee5; border-radius: 10px; }
+.generative-hero[hidden] { display: none; }
+.hero-dot-pattern { position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(circle, #eeeee518 1px, transparent 1.25px); background-size: 24px 24px; background-position: center; mask-image: linear-gradient(90deg, transparent 28%, #000 78%); -webkit-mask-image: linear-gradient(90deg, transparent 28%, #000 78%); }
+.generative-hero-copy { position: relative; z-index: 1; padding: clamp(36px,4.5vw,72px); width: min(100%, 960px); }
+.hero-kicker { font-size: 10px; letter-spacing: .8px; text-transform: uppercase; color: #a5a69a; margin: 0 0 30px; }
+.generative-hero h2 { font-size: var(--type-page-title); line-height: var(--type-heading-leading); letter-spacing: var(--type-heading-tracking); font-weight: var(--type-heading-weight); margin: 0; }
+.hero-description { max-width: 510px; margin: 27px 0 0; font-size: var(--type-intro); line-height: var(--type-intro-leading); color: #c4c5ba; }
+@media (max-width: 900px) { .generative-hero-copy { width: 90%; } }
+@media (max-width: 600px) {
+  .generative-hero { min-height: 440px; }
+  .generative-hero-copy { width: 100%; padding: 32px 24px 80px; }
+  .hero-dot-pattern { background-size: 22px 22px; mask-image: linear-gradient(160deg, transparent 35%, #000 100%); -webkit-mask-image: linear-gradient(160deg, transparent 35%, #000 100%); }
+  .hero-kicker { margin-bottom: 22px; font-size: 9px; }
+  .hero-description { max-width: 390px; margin-top: 22px; }
+}
+
+.generative-hero canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; touch-action: pan-y; }
+.generative-hero-copy { pointer-events: none; }
+.hero-kicker, .generative-hero h2, .hero-description { text-shadow: 0 0 12px #100f12, 0 0 24px #100f12; }
+.hero-canvas-controls { position: absolute; z-index: 2; right: 30px; bottom: 20px; display: flex; gap: 20px; }
+.hero-canvas-controls button { padding: 8px 0; font: 12px/1.5 var(--font-portfolio); color: #a5a69a; }
+.generative-hero canvas:focus-visible { outline: 1px solid #cfcebc; outline-offset: -8px; }
+.hero-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 600px) { .hero-canvas-controls { right: 24px; bottom: 16px; } }
+
+.hero-contact { min-height: 44px; margin-top: 24px; pointer-events: auto; }
+.workbench .hero-contact:focus-visible { outline: 2px solid var(--outline-ink); outline-offset: 4px; }
+
+.hero-contact-links { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px; pointer-events: auto; }
+.hero-contact-links a { display: inline-flex; align-items: center; min-height: 44px; color: #c4c5ba; font-size: var(--type-label); }

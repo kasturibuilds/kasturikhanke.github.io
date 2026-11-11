@@ -1,0 +1,94 @@
+.case-video-player { width: 100%; min-width: 0; color: #1d1d1f; background: #fff; }
+.case-video-controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: min(100%, 360px);
+  box-sizing: border-box;
+  margin: 16px auto 4px;
+  padding: 2px 6px;
+  border-radius: 28px;
+  background: #f5f5f7;
+}
+.case-video-player .case-video-controls button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  appearance: none;
+  box-shadow: none;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.case-video-player .case-video-controls button:hover { background: #e8e8ed; }
+.case-video-player .case-video-controls button[aria-pressed="true"] { background: #dedee3; }
+.case-video-player .case-video-controls button:active { background: #dcdce2; }
+.case-video-player .case-video-controls button:focus-visible, .case-video-seek:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 2px; }
+.case-video-controls svg { width: 17px; height: 17px; fill: currentColor; }
+.case-video-seek {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  min-width: 32px;
+  width: 100%;
+  height: 44px;
+  margin: 0 8px 0 4px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+.case-video-seek::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(to right, #68686e var(--video-progress), #d4d4d9 var(--video-progress));
+}
+.case-video-seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 9px;
+  height: 9px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background: #68686e;
+}
+.case-video-seek::-moz-range-track { height: 3px; border-radius: 3px; background: #d4d4d9; }
+.case-video-seek::-moz-range-progress { height: 3px; border-radius: 3px; background: #68686e; }
+.case-video-seek::-moz-range-thumb { width: 9px; height: 9px; border: 0; border-radius: 50%; background: #68686e; }
+.case-video-seek:disabled { opacity: .45; cursor: default; }
+.case-video-time {
+  flex: 0 0 34px;
+  color: #6e6e73;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.case-video-error { margin: 0; padding: 8px; font-size: 13px; }
+.case-video-error a { text-decoration: underline; }
+.case-video-player:fullscreen { display: flex; flex-direction: column; justify-content: center; padding: 16px; box-sizing: border-box; }
+.case-video-player:fullscreen video { flex: 1; min-height: 0; height: 0; max-height: none; width: 100%; object-fit: contain; }
+@media (forced-colors: active) {
+  .case-video-seek { appearance: auto; }
+  .case-video-controls { border: 1px solid ButtonText; }
+}
+
+/* Keep controls discoverable on touch and reveal them without moving the video. */
+@media (hover: hover) and (pointer: fine) {
+  .case-video-controls { opacity: 0; pointer-events: none; transition: opacity 160ms ease; }
+  .case-video-player:hover .case-video-controls,
+  .case-video-player:has(:focus-visible) .case-video-controls {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-video-controls { transition: none; }
+}

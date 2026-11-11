@@ -1,0 +1,62 @@
+{
+  "charts-terrain": {
+    "source": "https://generativecharts.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "charts-bar": {
+    "source": "https://generativecharts.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "loaders-chat": {
+    "source": "https://generativeloaders.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "loaders-text": {
+    "source": "https://generativeloaders.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "loaders-inline": {
+    "source": "https://generativeloaders.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "loaders-overview": {
+    "source": "https://generativeloaders.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "charts-heatmap": {
+    "source": "https://generativecharts.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "charts-line": {
+    "source": "https://generativecharts.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "loaders-images": {
+    "source": "https://generativeloaders.com/",
+    "captured": "2026-11-02",
+    "method": "Direct browser screenshot of original product UI. No recoloring or recreated components."
+  },
+  "loaders-inline-mobile": {
+    "source": "https://generativeloaders.com/",
+    "captured": "2026-11-02",
+    "method": "Direct capture of the native mobile product at 390px viewport width."
+  },
+  "loaders-text-mobile": {
+    "source": "https://generativeloaders.com/",
+    "captured": "2026-11-02",
+    "method": "Direct capture of the native mobile product at 390px viewport width."
+  },
+  "loaders-chat-mobile": {
+    "source": "https://generativeloaders.com/",
+    "captured": "2026-11-02",
+    "method": "Direct capture of the native mobile product at 390px viewport width."
+  }
+}

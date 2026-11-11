@@ -1,0 +1,308 @@
+{
+  "source": "https://generativeloaders.com/",
+  "capturedAt": "2026-10-08T04:04:50.003Z",
+  "theme": "dark",
+  "width": 3840,
+  "height": 2160,
+  "fps": 60,
+  "duration": 15,
+  "audio": false,
+  "shots": [
+    {
+      "name": "01-site",
+      "start": 0,
+      "duration": 1,
+      "frames": 60,
+      "samples": [
+        {
+          "frame": 9,
+          "file": "01-site-009.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 0,
+            "text": "Ideas arrive qNuOiPeQtRlSyT,U"
+          }
+        },
+        {
+          "frame": 33,
+          "file": "01-site-033.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 0,
+            "text": "Ideas arrive quietly,tWhXeYnZ "
+          }
+        },
+        {
+          "frame": 59,
+          "file": "01-site-059.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 0,
+            "text": "Ideas arrive quietly,then b1e2c3o4m5e6 "
+          }
+        }
+      ]
+    },
+    {
+      "name": "02-text",
+      "start": 1,
+      "duration": 2.5,
+      "frames": 150,
+      "samples": [
+        {
+          "frame": 22,
+          "file": "02-text-022.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324,
+            "text": "Ideas aGrHrIiJvKeL "
+          }
+        },
+        {
+          "frame": 82,
+          "file": "02-text-082.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324,
+            "text": "Ideas arrive quietly,then b1e2c3o4m5e6 "
+          }
+        },
+        {
+          "frame": 149,
+          "file": "02-text-149.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324,
+            "text": "Ideas arrive quietly,then become something c?l/eAaBrC.D"
+          }
+        }
+      ]
+    },
+    {
+      "name": "03-more-text",
+      "start": 3.5,
+      "duration": 1,
+      "frames": 60,
+      "samples": [
+        {
+          "frame": 9,
+          "file": "03-more-text-009.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 963,
+            "text": "Ideas arrive quietly,tWhXeYnZ "
+          }
+        },
+        {
+          "frame": 33,
+          "file": "03-more-text-033.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 963,
+            "text": "Ideas arrive quietly,then b1e2c3o4m5e6 "
+          }
+        },
+        {
+          "frame": 59,
+          "file": "03-more-text-059.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 963,
+            "text": "Ideas arrive quietly,then become s8o9m(e)t[h]i{n}g: "
+          }
+        }
+      ]
+    },
+    {
+      "name": "04-inline",
+      "start": 4.5,
+      "duration": 1,
+      "frames": 60,
+      "samples": [
+        {
+          "frame": 9,
+          "file": "04-inline-009.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324
+          }
+        },
+        {
+          "frame": 33,
+          "file": "04-inline-033.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324
+          }
+        },
+        {
+          "frame": 59,
+          "file": "04-inline-059.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324
+          }
+        }
+      ]
+    },
+    {
+      "name": "05-more-inline",
+      "start": 5.5,
+      "duration": 1,
+      "frames": 60,
+      "samples": [
+        {
+          "frame": 9,
+          "file": "05-more-inline-009.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 1018
+          }
+        },
+        {
+          "frame": 33,
+          "file": "05-more-inline-033.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 1018
+          }
+        },
+        {
+          "frame": 59,
+          "file": "05-more-inline-059.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 1018
+          }
+        }
+      ]
+    },
+    {
+      "name": "06-images",
+      "start": 6.5,
+      "duration": 2.75,
+      "frames": 165,
+      "samples": [
+        {
+          "frame": 24,
+          "file": "06-images-024.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324,
+            "imagePhase": "loading"
+          }
+        },
+        {
+          "frame": 90,
+          "file": "06-images-090.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324,
+            "imagePhase": "resolving"
+          }
+        },
+        {
+          "frame": 125,
+          "file": "06-images-125.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324,
+            "imagePhase": "loaded"
+          }
+        },
+        {
+          "frame": 164,
+          "file": "06-images-164.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 324,
+            "imagePhase": "loaded"
+          }
+        }
+      ]
+    },
+    {
+      "name": "07-more-images",
+      "start": 9.25,
+      "duration": 2.75,
+      "frames": 165,
+      "samples": [
+        {
+          "frame": 24,
+          "file": "07-more-images-024.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 683,
+            "imagePhase": "loading"
+          }
+        },
+        {
+          "frame": 90,
+          "file": "07-more-images-090.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 683,
+            "imagePhase": "resolving"
+          }
+        },
+        {
+          "frame": 125,
+          "file": "07-more-images-125.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 683,
+            "imagePhase": "loaded"
+          }
+        },
+        {
+          "frame": 164,
+          "file": "07-more-images-164.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 683,
+            "imagePhase": "loaded"
+          }
+        }
+      ]
+    },
+    {
+      "name": "08-streaming-chat",
+      "start": 12,
+      "duration": 3,
+      "frames": 180,
+      "samples": [
+        {
+          "frame": 27,
+          "file": "08-streaming-chat-027.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 266,
+            "text": "I’ll organize the ",
+            "chat": "I’ll organize the "
+          }
+        },
+        {
+          "frame": 99,
+          "file": "08-streaming-chat-099.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 266,
+            "text": "I’ll organize the strongest signals into positioning, rollout, ",
+            "chat": "I’ll organize the strongest signals into positioning, rollout, "
+          }
+        },
+        {
+          "frame": 179,
+          "file": "08-streaming-chat-179.png",
+          "state": {
+            "theme": "dark",
+            "scrollY": 266,
+            "text": "I’ll organize the strongest signals into positioning, rollout, and measurement.",
+            "chat": "I’ll organize the strongest signals into positioning, rollout, and measurement."
+          }
+        }
+      ]
+    }
+  ],
+  "pageErrors": []
+}
