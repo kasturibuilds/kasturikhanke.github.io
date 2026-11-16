@@ -5,6 +5,14 @@ const distDir = 'dist';
 const siteUrl = 'https://kasturi.live';
 const defaultDescription = 'Product designer and builder connecting AI product design, growth, and community. Explore Adobe, Sezzle, and independent work.';
 const routes = {
+  'generative-loaders': {
+    title: 'Generative Loaders — Kasturi Khanke',
+    description: 'From Progress Narrative to an open-source React library. Designing and building streaming text, activity indicators, and image loading with Codex.',
+  },
+  'generative-charts': {
+    title: 'Generative Charts — Kasturi Khanke',
+    description: 'From visual experiments to a React chart library. A case study in theme design, reusable components, accessibility, and truthful data presentation.',
+  },
   about: {
     title: 'About Kasturi Khanke — Product Designer & Builder',
     description: 'Meet Kasturi Khanke, a product designer and builder working across product strategy, design, and code in AI, mobile, and developer tools.',

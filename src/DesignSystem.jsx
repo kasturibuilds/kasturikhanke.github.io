@@ -1,30 +1,15 @@
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
 import React from 'react';
-import SpinningLogo from './SpinningLogo';
 import BottomNav from './BottomNav';
 
 const DesignSystem = () => {
   const [activePage, setActivePage] = React.useState('design-system');
-  const [sfTime, setSfTime] = React.useState('');
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Update San Francisco time
-  React.useEffect(() => {
-    const updateSfTime = () => {
-      const time = new Date().toLocaleTimeString('en-US', {
-        timeZone: 'America/Los_Angeles',
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true
-      });
-      setSfTime(time);
-    };
-    updateSfTime();
-    const interval = setInterval(updateSfTime, 60000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleNavClick = (page) => {
     if (page === 'home') {
@@ -36,9 +21,7 @@ const DesignSystem = () => {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
-      <header className="w-full bg-transparent pt-8 pb-16">
-        <SpinningLogo />
-      </header>
+      <SiteHeader />
 
       <main className="container mx-auto px-4 max-w-4xl">
         {/* Hero Section */}
@@ -207,78 +190,11 @@ const DesignSystem = () => {
       </main>
 
       {/* Contact Section */}
-      <section className="bg-gray-950 text-white pt-16 sm:pt-24 md:pt-32 pb-0 overflow-hidden">
-        {/* Top Content Area */}
-        <div className="container mx-auto px-6 sm:px-8 md:px-12 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
-            
-            {/* About Column */}
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">about</p>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                Kasturi is a product designer<br />
-                crafting AI-powered experiences<br />
-                that drive measurable impact<br />
-                and delight users.
-              </p>
-            </div>
-
-            {/* Contact Column */}
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">contact</p>
-              <a 
-                href="mailto:kasturi.khanke@gmail.com"
-                className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors duration-300 block"
-              >
-                kasturi.khanke@gmail.com
-              </a>
-            </div>
-
-            {/* Social Column */}
-            <div>
-              <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">social</p>
-              <a 
-                href="https://www.linkedin.com/in/kasturikhanke/"
-                className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors duration-300 block"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        {/* Large Name - Full Width, Clipped at Bottom */}
-        {/* Copyright Bar - Above Name */}
-        <div className="container mx-auto px-6 sm:px-8 md:px-12 max-w-6xl mt-16 sm:mt-24 md:mt-32">
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out py-6 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-6">
-            <p className="text-sm text-gray-400">
-              © 2026 Kasturi Khanke
-            </p>
-            <p className="text-sm text-gray-400">
-              San Francisco, CA · {sfTime}
-            </p>
-            <p className="text-sm text-gray-400">
-              Made with ♥ using Claude + Cursor
-            </p>
-          </div>
-        </div>
-
-        {/* Large Name - Full Width, Clipped at Bottom */}
-        <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out overflow-hidden">
-          <h3 
-            className="text-[12vw] sm:text-[14vw] md:text-[12vw] font-bold tracking-tighter leading-none whitespace-nowrap text-center select-none translate-y-[25%]"
-            style={{ color: 'white' }}
-          >
-            KASTURI KHANKE
-          </h3>
-        </div>
-      </section>
-      <footer className="w-full bg-gray-950">
+      <SiteFooter />
+      <div className="w-full bg-gray-950">
         <BottomNav activePage={activePage} onNavClick={handleNavClick}
         isCaseStudy={true} />
-      </footer>
+      </div>
      </div>
   );
 };

@@ -1,7 +1,7 @@
-import RollingText from './RollingText';
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
 import SoftLiftText from './SoftLiftText';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { contactEmail } from './PortfolioSections';
 import './WorkWithMe.css';
 
@@ -10,16 +10,10 @@ const resumeUrl = 'https://drive.google.com/file/d/1jHe89QZl4kRFyzGxPmNQcpglLIhG
 export default function WorkWithMe() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
-  return <div className="studio-page">
+  return <>
+  <SiteHeader />
+  <div className="studio-page">
     <a className="studio-skip" href="#main-content">Skip to content</a>
-    <header className="studio-nav">
-      <Link to="/" className="studio-name"><RollingText>Kasturi Khanke</RollingText></Link>
-      <nav aria-label="Portfolio navigation">
-        <Link to="/"><SoftLiftText>Work</SoftLiftText></Link>
-        <Link to="/about"><SoftLiftText>About</SoftLiftText></Link>
-        <a href={`mailto:${contactEmail}`}><SoftLiftText>Contact</SoftLiftText></a>
-      </nav>
-    </header>
 
     <main id="main-content" className="studio-main">
       
@@ -33,6 +27,7 @@ export default function WorkWithMe() {
       </nav>
     </main>
 
-    <footer className="studio-footer"><p>San Francisco, CA</p><Link to="/"><SoftLiftText>Selected work →</SoftLiftText></Link></footer>
-  </div>;
+  </div>
+  <SiteFooter />
+  </>;
 }

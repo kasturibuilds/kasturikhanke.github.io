@@ -41,3 +41,14 @@ Capture uses a 1280 × 720 browser viewport at device pixel ratio 3. Each of 900
 Legacy September screen recordings under `docs/media/loaders-promo/` remain archival sources and are not used for this reel.
 
 Validation: both exports contain exactly 900 video frames / 15.000 seconds, with no audio stream, and decode without errors. The production build passes. Capture completed with no page errors; the final chat sample contains the complete original response. All sampled scenes, including the homepage and chat, are confirmed in dark mode. The web copy is approximately 2.6 MB.
+
+## Homepage stationary preview — November 12, 2026
+
+The homepage uses `public/previews/loaders-fixed.mp4` and `.jpg`: a silent
+6.25-second, 2560 × 1440, 60 fps edit of the original master. It cuts between
+text loaders (source 1–3.5s), inline loaders (4.5–5.5s), and image loaders
+(6.5–9.25s). All three shots hold the same scroll position (324px); there is
+no scrolling, lower-row jump, hero, or chat segment. Playback speed is unchanged.
+The alternate gallery retains its original film.
+
+Rebuild with `node scripts/create-loaders-fixed-preview.mjs`.

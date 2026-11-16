@@ -19,6 +19,7 @@ Every decision should improve the visitor experience (UX), the developer experie
 - Use a small, consistent set of type sizes, spacing values, colors, and components. Preserve the site's visual identity.
 - Prefer a continuous reading surface. Add cards, borders, backgrounds, and panels only when they clarify a meaningful grouping.
 - Avoid competing focal points, oversized empty regions, and dense clusters of small labels. Whitespace should support reading and relationships.
+- When a section pairs screens or demos with an explanation, keep the heading and text together on the left and the media on the right at desktop widths. Stack text before media on mobile. Reserve the separate heading-and-text columns for text-only sections.
 - Pair a design decision with the relevant image or demo. Keep text readable and product interfaces large enough to inspect.
 - Use white reading surfaces for case studies. Make media backgrounds blend into the page; remove recording-edge artifacts and unnecessary framing.
 - Keep full devices and important UI visible. Check video and poster framing at desktop and mobile sizes; do not rely on an arbitrary crop that hides content.
@@ -31,6 +32,7 @@ Every decision should improve the visitor experience (UX), the developer experie
 - Keep navigation obvious and actions explicitly named. Remove redundant controls, including a project Close button when the existing Work navigation already provides a clear exit.
 - Preserve project URLs, standalone routes, browser history, meaningful anchors, keyboard navigation, focus behavior, and responsive layouts.
 - Retain media controls, reduced-motion support, and useful still previews. Pause autoplay when media is offscreen or the page is hidden.
+- Preserve the logo's entrance spin and interaction replay in the shared header, with reduced-motion support.
 - Use semantic HTML and meaningful headings, links, buttons, alt text, and accessible names so people and agents can understand the same interface.
 
 ## Implementation

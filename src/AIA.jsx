@@ -1,105 +1,254 @@
-/* eslint-disable react/prop-types */
-import CaseStudyLayout, { CaseStudySection } from './CaseStudyLayout';
-import './AIA.css';
+import ProjectNavigation from './ProjectNavigation';
+import SiteHeader from './SiteHeader';
+import SiteFooter from './SiteFooter';
+import React, { useEffect, useLayoutEffect } from 'react';
+import BottomNav from './BottomNav';
+import { IoLockClosedOutline } from "react-icons/io5";
+import ChallengesGoalsSection from './ChallengesGoalsSection';
+import FrameworkSection from './FrameworkSection';
+import { motion } from 'framer-motion';
 
-function PromptStill({ src, title, children }) {
-  return <figure className="aia-prompt-still">
-    <figcaption>
-      <h4>{title}</h4>
-      <p>{children}</p>
-    </figcaption>
-    <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`${title}: open full-size image`}>
-      <img src={src} alt={title} loading="lazy" />
-    </a>
-  </figure>;
+// Disable browser scroll restoration immediately
+if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
 }
+ const AIA = () => {
+    const sections = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'impact', label: 'Impact' },
+    { id: 'challenges', label: 'Challenges & Goals' },
+    { id: 'framework', label: 'Framework' },
+    { id: 'conclusion', label: 'Conclusion' }
+    ];
 
-function OnboardingComparison() {
-  return <div className="aia-onboarding-comparison" id="onboarding-comparison">
-    <div className="aia-comparison-grid">
-      <figure>
-        <figcaption><span>Before</span><h3>Explain the feature</h3><p>People saw a feature announcement, then had to choose where to find a file.</p></figcaption>
-        <a href="/BeforeUA.png" target="_blank" rel="noopener noreferrer" aria-label="Open original onboarding screens at full size">
-          <svg viewBox="225 140 1220 1200" role="img" aria-label="Original onboarding: feature announcement followed by a file-source picker">
-            <image href="/BeforeUA.png" width="1664" height="1481" />
-          </svg>
-        </a>
-        <div className="aia-flow-labels"><span>Feature announcement</span><span>Choose a file source</span></div>
-      </figure>
-      <figure>
-        <figcaption><span>After</span><h3>Show how it works</h3><p>People could see AI Assistant in action, then choose a recent file to try it themselves.</p></figcaption>
-        <a href="/AfterUA.png" target="_blank" rel="noopener noreferrer" aria-label="Open revised onboarding flow at full size">
-          <svg viewBox="88 85 720 708" role="img" aria-label="Revised onboarding: document-task demonstration followed by recent files inside AI Assistant">
-            <image href="/AfterUA.png" width="2048" height="873" />
-          </svg>
-        </a>
-        <div className="aia-flow-labels"><span>See questions and summaries</span><span>Choose a recent file</span></div>
-      </figure>
-    </div>
-    <figure className="aia-continuation">
-      <figcaption>
-        <h3>Asking the first question</h3>
-        <p>After choosing a file and giving consent, people could pick a suggested question once the document was ready. The responses shown here are sample copy.</p>
-      </figcaption>
-      <p className="aia-scroll-hint">Scroll horizontally to inspect the full flow.</p>
-      <div className="aia-flow-scroll" tabIndex={0} role="region" aria-label="Consent, processing, and suggested questions; scroll horizontally to inspect">
-        <a href="/AfterUA.png" target="_blank" rel="noopener noreferrer" aria-label="Open the complete onboarding flow at full size">
-          <svg viewBox="856 85 1108 708" role="img" aria-label="Consent after file selection, document processing, and suggested questions">
-            <image href="/AfterUA.png" width="2048" height="873" />
-          </svg>
-        </a>
-      </div>
-    </figure>
-  </div>;
-}
+   const [activePage, setActivePage] = React.useState('aia');
 
-export default function AIA({ embedded = false, headingRef }) {
-  return <CaseStudyLayout className="aia-case" embedded={embedded} headingRef={headingRef} title="Adobe AI Assistant"
-    role="Lead Product Designer · Sole designer · iOS & Android"
-    intro="Acrobat’s AI Assistant launched on mobile, but adoption was low. People did not understand what it could do for them. I redesigned how people found and tried the assistant, from the first introduction to asking a question about their own document."
-    nextPath="/pdf-spaces" nextTitle="PDF Spaces">
-    <CaseStudySection id="discovery-framework" title="How people found and tried AI Assistant">
-      <p>The team wanted to add more messaging about AI Assistant across the app. I mapped out what people needed at each step: notice the feature, understand what it could do, and try it on a document.</p>
-      <p>I worked with product marketing managers to give each part of the experience a clear job. Onboarding explained how it worked. Suggestions while reading and selecting text helped people find it when they needed it. Prompts helped them ask their first question.</p>
-    </CaseStudySection>
-    <CaseStudySection id="onboarding" title="A demo in onboarding" video="/UA.mov" poster="/previews/case-studies/UA.jpg" alt="AI Assistant onboarding demonstrates document questions and summaries" evidence={<>
-      <OnboardingComparison />
-    </>}>
-      <p>Research showed that announcements and coachmarks were not helping people understand AI Assistant.</p>
-      <p>I replaced the feature description with a demo of questions and summaries, then brought recent files into the assistant so people could try it on their own document.</p>
-    </CaseStudySection>
-    <CaseStudySection id="contextual-nudges" title="Suggestions while reading" video="/Chatbubble.mov" poster="/previews/case-studies/Chatbubble.jpg" alt="An AI suggestion appears in the context of a document">
-      <p>I did not want to add another notification people would ignore. I designed suggestions based on reading behavior, so they related to the document someone already had open.</p>
-    </CaseStudySection>
-    <CaseStudySection id="text-selection" title="Ask AI about selected text" video="/AskAI.mov" poster="/previews/case-studies/AskAI.jpg" alt="Selecting text opens a contextual Ask AI action">
-      <p>Text selection took the most discussion with the team. We had to decide what action to offer when someone highlighted a passage and how to label it.</p>
-      <p>I focused on what the person had already selected. Ask AI let them ask about that passage without copying it into chat.</p>
-      <p>I worked with engineers to fit Ask AI into the selection menus on iOS and Android.</p>
-    </CaseStudySection>
-    <CaseStudySection id="quick-prompts" title="Helping people decide what to ask" video="/IC.mov" poster="/previews/case-studies/IC.jpg" alt="Quick prompts organized into task categories" evidence={<>
-      <div className="aia-prompt-comparison" id="prompt-comparison">
-        <section className="aia-prompt-before" aria-labelledby="prompt-before-title">
-          <h3 id="prompt-before-title">Before</h3>
-          <PromptStill src="/aia-prompt-0.jpg" title="Generic suggestions">The welcome screen showed suggested questions above the input.</PromptStill>
-        </section>
-        <section className="aia-prompt-explorations" aria-labelledby="prompt-explorations-title">
-          <h3 id="prompt-explorations-title">Explorations</h3>
-          <div className="aia-prompt-options">
-            <PromptStill src="/aia-prompt-1.jpg" title="Autocomplete">Suggestions appeared after someone began typing a question.</PromptStill>
-            <PromptStill src="/aia-prompt-2.jpg" title="Starter kit">An introduction explained the assistant’s features in the chat.</PromptStill>
+   const videoRef = React.useRef(null);
+   // Scroll to top before browser paints
+   useLayoutEffect(() => {
+     window.scrollTo(0, 0);
+   }, []);
+
+   React.useEffect(() => {
+     if (videoRef.current) {
+       videoRef.current.play().catch(error => {
+         console.log("Video autoplay failed:", error);
+       });
+     }
+   }, []);
+
+
+
+   // Scroll reveal animation observer
+   useEffect(() => {
+     const observer = new IntersectionObserver(
+       entries => {
+         entries.forEach(entry => {
+           if (entry.isIntersecting) {
+             entry.target.classList.add('opacity-100', 'translate-y-0');
+             entry.target.classList.remove('opacity-0', 'translate-y-10');
+           }
+         });
+       },
+       { threshold: 0.1 }
+     );
+
+     document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+     return () => observer.disconnect();
+   }, []);
+   const handleNavClick = (page) => {
+     if (page === 'home') {
+       window.location.href = '/?fromCaseStudy=true';
+       window.scrollTo(0, 0);
+     } else {
+       setActivePage(page);
+     }
+   };
+
+   // Updated navigation handler
+  const handleNextProject = () => {
+    navigate('/sezzle'); // Update this to your next project's route
+  };
+
+
+   return (
+
+     <div className="min-h-screen bg-white text-gray-900 font-sans">
+      <SiteHeader />
+
+      <main className="case-study-main container mx-auto px-8 sm:px-6 max-w-4xl">
+        {/* Hero Section */}
+        <section className="case-study-intro mb-12 md:mb-16">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-3 md:mb-4 leading-tight text-gray-900">Making AI Discoverable: Adobe Acrobat AI</h1>
+          <p className="text-base sm:text-lg md:text-xl font-normal leading mb-6 md:mb-8 text-gray-600">
+            How I helped mobile users discover and understand Acrobat AI Assistant at the right moment, increasing adoption while reducing notification fatigue.
+          </p>
+          {/* Role Details */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-sm mb-8 md:mb-12">
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Role</p>
+              <p className="text-gray-900">Lead Product Designer</p>
+            </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Timeline</p>
+              <p className="text-gray-900">Launch discovery sprint</p>
+            </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Award</p>
+              <p className="text-gray-900">Industry-recognized launch</p>
+            </div>
+            <div>
+              <p className="text-gray-400 text-xs uppercase tracking-wide mb-1">Platform</p>
+              <p className="text-gray-900">iOS & Android</p>
+            </div>
+          </div>
+         </section>
+
+
+
+        {/* Impact Section */}
+        <section id="impact" className="relative py-6 md:py-8" aria-labelledby="impact-heading">
+          <div className="w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mb-6 md:mb-8">
+              <h2 id="impact-heading" className="text-lg sm:text-xl md:text-2xl font-medium text-gray-900">Impact</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 items-start gap-6 sm:gap-8">
+                <div className="min-w-0">
+                  <h3 className="text-xl font-medium text-gray-900 mb-2">Higher engagement</h3>
+                  <p className="text-base text-gray-600">Increase in AI feature engagement</p>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-xl font-medium text-gray-900 mb-2">Subscription lift</h3>
+                  <p className="text-base text-gray-600">Lift in AI subscriptions after scaled onboarding</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-        <section className="aia-prompt-selected" aria-labelledby="prompt-selected-title">
-          <h3 id="prompt-selected-title">Selected</h3>
-          <PromptStill src="/aia-prompt-3.jpg" title="Prompts by task">Suggestions were grouped under Ask, Analyze, and Generate.</PromptStill>
+
+         <ChallengesGoalsSection />
+         <section className="mb-6 md:mb-8">
+          {/* Outer container with dots */}
+          <div
+            className="scroll-reveal transform transition-all duration-700 ease-out relative rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10"
+            style={{
+              backgroundColor: '#0f0f0f',
+              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)',
+              backgroundSize: '24px 24px'
+            }}
+          >
+            {/* Inner bordered container - transparent so dots show through */}
+            <div
+              className="rounded-xl md:rounded-2xl p-8 sm:p-12 md:p-16"
+              style={{
+                border: '1px solid rgba(255,255,255,0.12)',
+                backgroundColor: 'transparent'
+              }}
+            >
+              <h2 className="text-base sm:text-lg md:text-2xl font-medium text-white">How might we increase AI awareness without increasing notification fatigue?</h2>
+            </div>
+          </div>
+         </section>
+         {/* Solution Section */}
+         <FrameworkSection />
+         {/* <section className="">
+          <h2 className="text-2xl text-center font-medium mt-16 text-gray-900">Framework Before</h2>
+
+         <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%]">
+          <img
+            src="/FrameworkBeforeAIA.png"
+            alt="Framework Before"
+            className="w-full h-auto"
+          />
+        </div>
+        <h2 className="text-2xl font-medium text-center text-gray-900">Framework After</h2>
+        <div className="relative w-screen -mx-[50vw] left-[50%] right-[50%]">
+          <img
+            src="/FrameworkAfterAIA.png"
+            alt="Framework After"
+            className="w-full h-auto"
+          />
+        </div>
+         </section> */}
+
+        <section className="relative pt-10 pb-20 md:pt-14 md:pb-24">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out space-y-5">
+            <h2 className="max-w-3xl text-base sm:text-lg font-medium leading-relaxed text-gray-950">What I learned</h2>
+            <p className="max-w-3xl text-base md:text-lg leading-relaxed text-gray-600">
+              This work changed how I think about launching AI in mature products. The right discovery model was less about announcing a feature and more about meeting people at the moment the feature could actually help.
+            </p>
+          </div>
+
+          <div className="scroll-reveal transform transition-all duration-700 ease-out mt-8 md:mt-10 border-t border-gray-200">
+            {[
+              {
+                label: 'System',
+                title: 'Discovery is a system, not a feature',
+                body: 'Each touchpoint worked because it was part of a connected journey from awareness to understanding to activation, not an isolated promotional surface.'
+              },
+              {
+                label: 'Timing',
+                title: 'AI needs different discovery patterns',
+                body: 'Traditional new-feature announcements were not enough. People needed concrete use cases, clear timing, and a fast path to experience value.'
+              },
+              {
+                label: 'Input',
+                title: 'Mobile AI asks for lower-friction inputs',
+                body: 'Suggested prompts, text selection, and contextual entry points mattered because tapping is easier than composing a perfect question on a small screen.'
+              },
+              {
+                label: 'Habit',
+                title: 'Activation should lead toward habit',
+                body: 'The framework helped people try AI Assistant, but the next layer would be designing repeat value: the moments that bring someone back because the tool keeps helping.'
+              }
+            ].map((learning) => (
+              <motion.div
+                key={learning.label}
+                className="grid grid-cols-1 gap-3 border-b border-gray-200 py-6 md:grid-cols-[96px_1fr] md:gap-8 md:py-8"
+                initial={false}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true, amount: 0.16 }}
+              >
+                <span className="text-sm font-medium leading-relaxed text-gray-400">{learning.label}</span>
+                <div className="max-w-3xl space-y-3">
+                  <h3 className="text-xl md:text-2xl font-medium text-gray-900">{learning.title}</h3>
+                  <p className="text-base md:text-lg leading-relaxed text-gray-600">{learning.body}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </section>
-      </div>
-    </>}>
-      <p>People often did not know what to ask in an empty chat. I explored three options: autocomplete, a starter kit, and prompts grouped by task.</p>
-      <p>Based on user testing, we chose prompts grouped by task. People could choose what they wanted help with without having to write a question from scratch.</p>
-    </CaseStudySection>
-    <CaseStudySection id="impact" title="What shipped">
-      <p>The onboarding demo, contextual suggestions, Ask AI text-selection action, and task-based prompts all shipped on mobile.</p>
-    </CaseStudySection>
-  </CaseStudyLayout>;
-}
+
+         <section className="mb-16 md:mb-32">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out mb-8 md:mb-12">
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Reflection</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">Concluding thoughts</h2>
+          </div>
+
+          <p className="scroll-reveal transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600 mb-6 md:mb-8">
+            This project reinforced that AI features need contextual discovery. People don't open Acrobat because they want to "use AI." They open it to read a contract, understand a research paper, or find something important in a document. The framework I designed met users in those moments instead of asking them to learn a new feature before seeing value.
+          </p>
+
+          <p className="scroll-reveal transform transition-all duration-700 ease-out text-base sm:text-lg text-gray-600">
+            The framework not only addressed immediate challenges but also established a foundation for future feature launches, enabling the team to iterate and innovate rapidly within tight timelines.
+          </p>
+        </section>
+
+       </main>
+
+        {/* Project navigation */}
+      <div className="container mx-auto px-4 max-w-4xl">
+          <ProjectNavigation currentPath="/aia" />
+        </div>
+
+
+       {/* Contact Section */}
+       <SiteFooter />
+       <div className="w-full bg-gray-950">
+         <BottomNav activePage={activePage} onNavClick={handleNavClick}
+         isCaseStudy={true} />
+       </div>
+     </div>
+   );
+ };
+ export default AIA;

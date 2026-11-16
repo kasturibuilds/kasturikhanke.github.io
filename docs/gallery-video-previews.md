@@ -43,3 +43,15 @@ Clicky uses an actual Simulator recording of tapping its frosted keyboard, captu
 Run `node scripts/create-gallery-videos.mjs` to generate missing outputs. Existing files are left intact. FFmpeg is required. Outputs live in `public/previews/`.
 
 Only a selected thumbnail loads its video and plays. Leaving a channel or opening a dialog pauses it. Pause/Play applies across thumbnail channels; reduced-motion users see still posters. The OpenAI feature retains its own controls. Video errors fall back to the poster.
+
+## Homepage phone previews — November 12, 2026
+
+The homepage uses `spaces-phone.mp4` and `assistant-phone.mp4` with matching
+JPG posters. Each is an eight-second silent excerpt of the original
+`Spaces_customassistant.mov` or `UA.mov`, at native playback speed, exported
+at 720 × 1280 / 30 fps. Fixed crops remove the recording canvas edges while
+preserving the complete phone, then pad to a white portrait canvas. Rebuild
+with `node scripts/create-home-phone-previews.mjs`.
+
+Sezzle retains its still cover because no product recording is available in
+this checkout. The alternate gallery and case-study routes are unchanged.

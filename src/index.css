@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.case-study-main {
+  padding-top: clamp(32px, 5vw, 64px);
+}
+
 @font-face {
   font-family: "Inter Display";
   src: url("/fonts/InterDisplay-Regular.woff2") format("woff2");
@@ -70,7 +74,7 @@
   }
 }
 
-body { background: #fafaf9; }
+body { background: #fff; }
 .route-message { min-height: 100svh; padding: 12vh max(24px, 6vw); background: #f7f7f4; color: #242424; font-family: var(--font-portfolio); }
 .route-message p { color: #6b6b65; font-size: 13px; }
 .route-message h1 { max-width: 600px; font-size: var(--type-page-title); font-weight: var(--type-heading-weight); line-height: var(--type-heading-leading); letter-spacing: var(--type-heading-tracking); margin: 24px 0; }
@@ -113,4 +117,49 @@ a:has(> .soft-lift-text) { text-decoration: none; }
 @keyframes portfolio-chrome-enter {
   from { opacity: .65; }
   to { opacity: 1; }
+}
+
+/* One horizontal alignment for portfolio navigation, content, and footer. */
+.site-container {
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 4vw, 64px);
+}
+
+
+/* Shared case-study entrance, adapted from the Generative Charts catalog.
+   Backwards fill releases transforms after entry; all content stays readable. */
+@keyframes case-study-headline-enter {
+  from { opacity: 0; filter: blur(8px); transform: translateY(24px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+@keyframes case-study-content-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes case-study-media-enter {
+  from { opacity: 0; transform: translateY(24px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .case-study-intro > h1 {
+    animation: case-study-headline-enter 900ms var(--motion-ease) backwards;
+  }
+  .case-study-intro > p {
+    animation: case-study-content-enter 800ms var(--motion-ease) 120ms backwards;
+  }
+  .case-study-intro > :is(dl, div) {
+    animation: case-study-content-enter 800ms var(--motion-ease) 220ms backwards;
+  }
+  .case-study-intro > dl + div {
+    animation-delay: 300ms;
+  }
+  .case-study-intro > :is(figure, video) {
+    transform-origin: center top;
+    animation: case-study-media-enter 900ms var(--motion-ease) 360ms backwards;
+  }
+  .case-study-intro > :focus-within {
+    animation: none;
+  }
 }

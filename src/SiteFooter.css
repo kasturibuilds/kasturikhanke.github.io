@@ -1,0 +1,12 @@
+.site-footer { background: #030712; color: #d1d5db; padding-top: clamp(80px, 9vw, 156px); overflow: hidden; }
+.site-footer .site-container { max-width: 1728px; padding-inline: clamp(24px, 4.63vw, 80px); }
+.site-footer-columns { display: flex; justify-content: space-between; gap: 48px; }
+.site-footer-columns > div { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: clamp(28px, 3.2vw, 56px); max-width: 327px; }
+.site-footer-columns p { text-wrap: pretty; }
+.site-footer-columns p, .site-footer-columns a { font-size: clamp(15px, 1.16vw, 20px); line-height: 1.5; }
+.site-footer-columns a { overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: 5px; }
+.site-footer-columns a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+.site-footer-signature { color: #fff; margin-top: clamp(80px, 9vw, 156px); font-size: 12.3vw; font-weight: 700; letter-spacing: -.05em; line-height: 1; white-space: nowrap; text-align: center; transform: translateY(20%); user-select: none; }
+@media (max-width: 650px) {
+  .site-footer-columns { flex-direction: column; gap: 40px; }
+}

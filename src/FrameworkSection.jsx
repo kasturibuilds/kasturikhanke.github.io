@@ -1,26 +1,11 @@
-import CaseStudyVideo from './CaseStudyVideo';
+import PortfolioVideo from './PortfolioVideo';
 import React, { useEffect, useRef, useState } from 'react';
 
 const FrameworkSection = () => {
   const [animationStage, setAnimationStage] = useState(0);
   const infographicRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-10');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
 
-    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
 
   // Animation for the infographic
   useEffect(() => {
@@ -47,21 +32,20 @@ const FrameworkSection = () => {
   }, [animationStage]);
 
   return (
-    <section className="case-framework relative py-8 md:py-12">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="case-framework-intro" data-chapter="Discovery system">
+    <section className="relative py-8 md:py-12">
+      <div className="w-full">
         <div className="mb-8 md:mb-12">
           <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Framework</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">The discovery system</h2>
         </div>
 
         {/* Discovery system table */}
-        <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mb-8 md:mb-12">
+        <div className="scroll-reveal transform transition-all duration-700 ease-out mb-8 md:mb-12">
           <div>
             <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8">
               I designed a staged discovery system that meets users at different points in their journey while using Acrobat:
             </p>
-            
+
             {/* Staged discovery system - Clean Visual */}
             <div ref={infographicRef} className="py-10 md:py-16 mb-6 md:mb-8">
               <div className="grid grid-cols-3 w-full">
@@ -79,7 +63,7 @@ const FrameworkSection = () => {
                     <p className="text-sm md:text-base text-gray-500 leading-relaxed px-4 text-center">Let users know AI Assistant exists</p>
                   </div>
                 </div>
-                
+
                 {/* Understanding stage */}
                 <div className="flex flex-col items-center">
                   <div className="flex items-center w-full mb-8">
@@ -94,7 +78,7 @@ const FrameworkSection = () => {
                     <p className="text-sm md:text-base text-gray-500 leading-relaxed px-4 text-center">Show what AI Assistant does and why it's valuable</p>
                   </div>
                 </div>
-                
+
                 {/* Activation stage */}
                 <div className="flex flex-col items-center">
                   <div className="flex items-center w-full mb-8">
@@ -118,7 +102,7 @@ const FrameworkSection = () => {
               </p>
             </div>
 
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-12">
+            <div className="scroll-reveal transform transition-all duration-700 ease-out mt-8 md:mt-12">
               <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3">Why this approach?</h3>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-4xl">
               We considered onboarding tutorials and proactive AI suggestions, but both created problems: tutorials blocked users from their work, and proactive suggestions felt presumptuous. Progressive contextual discovery won because it worked with user behavior, not against it.              </p>
@@ -126,10 +110,9 @@ const FrameworkSection = () => {
           </div>
         </div>
 
-        </div>
-        <div className="case-framework-examples space-y-8 md:space-y-12">
+        <div className="space-y-8 md:space-y-12">
           {/* Push notifications */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
@@ -151,24 +134,24 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <CaseStudyVideo
+                <PortfolioVideo
                   className="w-full h-full object-cover rounded-lg"
+                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
                   src="/PN.mov"
-                  aria-label="AI Assistant notification discovery demo"
                   type="video/quicktime"
-                  preload="none"
+                  preload="auto"
                 >
                   Your browser does not support the video tag.
-                </CaseStudyVideo>
+                </PortfolioVideo>
               </div>
             </div>
           </div>
 
           {/* Value proposition */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
@@ -187,31 +170,31 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <CaseStudyVideo
+                <PortfolioVideo
                   className="w-full h-full object-cover rounded-lg"
+                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
                   src="/UA.mov"
-                  aria-label="AI Assistant onboarding demo"
                   type="video/quicktime"
-                  preload="none"
+                  preload="auto"
                 >
                   Your browser does not support the video tag.
-                </CaseStudyVideo>
+                </PortfolioVideo>
               </div>
             </div>
 
             {/* Problem-Solution Grid */}
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-16">
+            <div className="scroll-reveal transform transition-all duration-700 ease-out mt-8 md:mt-16">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
                   <div className="col-span-1 md:col-span-8">
                     <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
                       <span className="text-lg md:text-xl font-medium mb-2 text-gray-900">The pivot</span>
                     </h4>
-                    <img 
+                    <img
                       src="/BeforeUA.png"
-                      alt="Description" 
+                      alt="Description"
                       className="w-full rounded-lg mt-4 md:mt-8"
                     />
                   </div>
@@ -230,23 +213,23 @@ const FrameworkSection = () => {
                     </div>
                   </div>
                 </div>
-                <img 
+                <img
                   src="/AfterUA.png"
-                  alt="Description" 
+                  alt="Description"
                   className="w-full mt-4 md:mt-8 rounded-lg"
                 />
             </div>
 
             {/* UI Evolution */}
-            <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-16">
+            <div className="scroll-reveal transform transition-all duration-700 ease-out mt-8 md:mt-16">
               <div>
                 <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold mb-2">
                   <span className="text-lg md:text-xl font-medium mb-2 text-gray-900">UI evolution</span>
                 </h4>
                 <p className="mb-4 md:mb-8 text-sm md:text-base text-gray-600">I worked with the Gen AI design team through recurring critiques and partnered with motion designers to iterate on the splash screen. Early versions felt more like feature lists or overly narrow demos. In the final version, I collaborated with the motion team to show the broader value of AI Assistant and simplified the UI around a primary CTA. </p>
-                <img 
+                <img
                   src="/SplashUI.png"
-                  alt="Description" 
+                  alt="Description"
                   className="w-full rounded-lg"
                 />
               </div>
@@ -254,7 +237,7 @@ const FrameworkSection = () => {
           </div>
 
           {/* Contextual nudges */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
@@ -272,22 +255,22 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <CaseStudyVideo
+                <PortfolioVideo
                   className="w-full h-full object-cover rounded-lg"
+                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
                   src="/Chatbubble.mov"
-                  aria-label="Contextual AI Assistant prompt demo"
                   type="video/quicktime"
-                  preload="none"
+                  preload="auto"
                 >
                   Your browser does not support the video tag.
-                </CaseStudyVideo>
+                </PortfolioVideo>
               </div>
             </div>
           </div>
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-16">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out mt-8 md:mt-16">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
                 <div className="col-span-1 md:col-span-8">
                   <h4 className="flex items-center gap-2 text-lg md:text-xl font-bold">
@@ -303,7 +286,7 @@ const FrameworkSection = () => {
                   <div>
                     <h3 className="font-medium mb-2 text-gray-900">Contextual</h3>
                     <span className="space-y-2 text-sm md:text-base text-gray-600">
-                    
+
                         <span>Nudges appear at the moment of intent (e.g., when opening a long document) and eliminate the "what should I ask?" friction by suggesting relevant actions</span>
                   </span>
                   </div>
@@ -324,7 +307,7 @@ const FrameworkSection = () => {
             </div>
 
           {/* Text contextualization */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
@@ -341,24 +324,24 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <CaseStudyVideo
+                <PortfolioVideo
                   className="w-full h-full object-cover rounded-lg shadow-sm"
+                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
                   src="/AskAI.mov"
-                  aria-label="Ask AI from selected text demo"
                   type="video/quicktime"
-                  preload="none"
+                  preload="auto"
                 >
                   Your browser does not support the video tag.
-                </CaseStudyVideo>
+                </PortfolioVideo>
               </div>
             </div>
           </div>
 
           {/* Cold start solution */}
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
               <div className="pt-4 md:pt-16">
                 <div>
@@ -395,23 +378,23 @@ const FrameworkSection = () => {
                 </div>
               </div>
               <div className="relative h-[400px] md:h-[600px]">
-                <CaseStudyVideo
+                <PortfolioVideo
                   className="w-full h-full object-cover rounded-lg shadow-sm"
+                  autoPlay={true}
                   loop={true}
                   muted={true}
                   playsInline={true}
                   src="/IC.mov"
-                  aria-label="AI Quick Prompts demo"
                   type="video/quicktime"
-                  preload="none"
+                  preload="auto"
                 >
                   Your browser does not support the video tag.
-                </CaseStudyVideo>
+                </PortfolioVideo>
               </div>
             </div>
           </div>
 
-          <div className="scroll-reveal opacity-0 translate-y-10 transform transition-all duration-700 ease-out mt-8 md:mt-16">
+          <div className="scroll-reveal transform transition-all duration-700 ease-out mt-8 md:mt-16">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="col-span-1 md:col-span-8">
                 <h4 className="text-lg md:text-xl font-medium mb-2 text-gray-900">Why categories?</h4>

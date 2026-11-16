@@ -1,0 +1,26 @@
+.image-completion { position: relative; width: 100%; aspect-ratio: 1; overflow: hidden; border-radius: 8px; }
+.image-completion-source { display: block; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+.image-completion-loading, .image-completion-pieces { position: absolute; inset: 0; }
+.image-completion[data-complete="true"] .image-completion-loading { animation: completion-loader-out 700ms ease-out both; }
+.image-completion[data-complete="true"] .image-completion-source { animation: completion-source-in 1ms 1700ms both; }
+.image-completion-pieces { animation: completion-loader-out 1ms 1701ms both; }
+.image-completion-piece { position: absolute; background-repeat: no-repeat; animation: completion-tile 700ms cubic-bezier(.22,1,.36,1) var(--reveal-delay) both; }
+.image-completion[data-variant="pixel-grid"] .image-completion-piece { animation-name: completion-pixel; }
+.image-completion[data-variant="resolution"] .image-completion-piece { animation-name: completion-resolution; animation-duration: 1100ms; }
+.image-completion[data-variant="bands"] .image-completion-piece { animation-name: completion-band; }
+.image-completion[data-variant="scan"] .image-completion-piece { animation-name: completion-scan; animation-duration: 1300ms; }
+.image-completion[data-variant="shutter"] .image-completion-piece { animation-name: completion-shutter; animation-duration: 1100ms; }
+.image-completion[data-paused="true"] :is(.image-completion-piece, .image-completion-loading, .image-completion-pieces, .image-completion-source) { animation-play-state: paused; }
+@keyframes completion-source-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes completion-loader-out { to { opacity: 0; } }
+@keyframes completion-tile { from { opacity: 0; clip-path: inset(35% round 10%); } to { opacity: 1; clip-path: inset(0 round 0); } }
+@keyframes completion-pixel { from { opacity: 0; transform: scale(.65); } to { opacity: 1; transform: scale(1); } }
+@keyframes completion-resolution { from { opacity: 0; filter: blur(10px) saturate(0); } to { opacity: 1; filter: blur(0) saturate(1); } }
+@keyframes completion-band { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
+@keyframes completion-scan { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+@keyframes completion-shutter { from { clip-path: inset(0 var(--reveal-edge)); } to { clip-path: inset(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .image-completion[data-complete="true"] .image-completion-loading { animation: none; opacity: 0; }
+  .image-completion[data-complete="true"] .image-completion-source { animation: none; opacity: 1; }
+  .image-completion-pieces { display: none; }
+}

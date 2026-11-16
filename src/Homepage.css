@@ -1,0 +1,4 @@
+.portfolio-home .site-container {
+  max-width: 1728px;
+  padding-inline: clamp(24px, 4.63vw, 80px);
+}

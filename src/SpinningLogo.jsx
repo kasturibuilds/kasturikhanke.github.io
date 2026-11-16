@@ -1,5 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
+// Keep the same entrance and replay animation wherever the shared header appears.
+export function SpinningLogoImage() {
+  const [hasEntered, setHasEntered] = useState(false);
+
+  return (
+    <img
+      src="/LogoK.png"
+      alt=""
+      width="40"
+      height="40"
+      onAnimationEnd={() => setHasEntered(true)}
+      className={`w-10 aspect-square object-contain motion-reduce:animate-none ${
+        hasEntered
+          ? 'group-hover:animate-spin-three-times group-focus-visible:animate-spin-three-times'
+          : 'animate-spin-three-times'
+      }`}
+    />
+  );
+}
+
 const SpinningLogo = ({ onLogoClick }) => {
   const [isInitialSpin, setIsInitialSpin] = useState(true);
 
@@ -20,7 +40,7 @@ const SpinningLogo = ({ onLogoClick }) => {
   };
 
   return (
-    <div className="p-4">
+    <div className="py-4">
       <img
         src="/LogoK.png"
         alt="Logo K"

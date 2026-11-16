@@ -1,21 +1,21 @@
 # Kasturi’s portfolio
 
-React and Vite. Run `npm run dev` for local development and `npm run build` for the production bundle and static route entry points. `node --test tests/gameOfLife.test.mjs` checks the interactive canvas logic.
+React and Vite. Run `npm run dev` for local development and `npm run build` for the production bundle and static route entry points. `node --test tests/gameOfLife.test.mjs` checks the retained interactive canvas logic.
 
 ## Source map
 
-- `src/main.jsx` loads `GalleryApp.jsx`, the active route table.
-- `PortfolioBoard.jsx` owns the homepage, project selection, About and Contact panels. Query parameters (`?project=loaders`, `?view=contact`) preserve direct links and browser history.
-- `portfolioProjects.js` supplies project media and facts. `LoadersBento.jsx` and `ChartsBento.jsx` pair design decisions with live examples from the installed libraries. They use the same `CaseStudyLayout.jsx` introduction and sections as the other case studies; each story’s copy lives beside its demos.
-- `ProjectExampleGalleries.jsx` contains the end-of-story loader and chart galleries. Loader previews pause offscreen and respect reduced motion.
-- `CaseStudyLayout.jsx` renders the shared introduction and `CaseStudySection` pairs each decision with its evidence. `AIA.jsx`, `PDFSpaces.jsx`, and `SezzleUp.jsx` contain the stories, reused inside project sheets and on standalone routes. Keep section IDs stable for direct links; use native headings and media controls instead of generated chapter navigation or scroll reveals.
-- `useProjectTransition.js` and `ProjectTransition.css` coordinate the 620 ms curtain and page swipe for all homepage views and case studies, including browser Back/Forward, logo or Work/About/Contact taps (even the current section), and interrupted navigation.
-- `HomeEntrance.jsx` and `HomeEntrance.css` provide the homepage curtain reveal at most once on initial entry. It skips logo taps, direct project links, return navigation, and reduced motion, and dismisses immediately on interaction.
-- `GenerativeHero.jsx` and `gameOfLife.js` own the interactive footer.
-- `/receiver` retains the alternate gallery; `/2025/` is the archived portfolio.
-- `scripts/create-static-routes.mjs` generates direct-entry HTML and page metadata after the build.
+- `src/main.jsx` loads `App.jsx`, the restored pre-redesign portfolio from commit `a54da21c`.
+- `App.jsx` owns the route table and homepage. `ProjectHero.jsx` and `ProjectHero.css` supply the six-project showcase, with laptop framing for wide demos and navigation below the media. `Homepage.css` scopes the homepage width and two-column footer. `SiteHeader.jsx` and `StandardNavbar.jsx` supply shared navigation. `LiveHomepage.jsx` is an inactive reference to the deployed three-project layout.
+- `homeProjects.js` defines the homepage order; `ProjectNavigation.jsx` uses its case-study routes for shared Previous/Next links, wrapping at either end and skipping external features.
+- `AIA.jsx`, `PDFSpaces.jsx`, `SezzleUp.jsx`, `About.jsx`, and `FrameworkSection.jsx` contain the restored case studies and About page.
+- `GenerativeCaseStudy.jsx` supplies the shared case-study format for `/generative-loaders` and `/generative-charts`; `generativeStories.js` contains their process narratives and media. `SiteFooter.jsx` supplies the shared contact CTA and footer across the main portfolio routes. `CaseStudyFeature.jsx` shares feature-section layout between these stories and PDF Spaces. Rebuild the focused video demos from the 4K source recordings with `node scripts/create-case-study-demos.mjs` (requires FFmpeg).
+- `/receiver` retains the alternate gallery (`ProjectGallery.jsx`); `/work-with-me` retains the contact page.
+- `GenerativeUseCases.jsx` and `GenerativeUseCases.css` contain the live chart dashboard and simulated AI conversation examples, using the actual chart and loader library components.
+- `/2025/` remains the independent frozen archive in `public/2025`.
+- `scripts/create-static-routes.mjs` generates direct-entry HTML and metadata after the build.
+- `src/index.css` and `tailwind.config.js` supply styles. Redesign components remain inactive source references, not a new public archive route.
 
-- `src/index.css` defines the shared page-title, section-title, introduction, body, and label typography. Current portfolio pages consume these tokens; chart/demo internals keep their product typography.
+The redesign was saved outside this repository as a private local archive before restoration, including source, media, and its built preview. No reference copy is published by the build.
 
 ## Editing principles
 
